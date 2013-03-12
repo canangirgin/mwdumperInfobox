@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24102694-944a-48a8-bac7-3232ace09138" name="Default" comment="" />
+    <list default="true" id="24102694-944a-48a8-bac7-3232ace09138" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Kişi Şablonları" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Table Alter" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mediawiki/dumper/Dumper.java" afterPath="$PROJECT_DIR$/src/org/mediawiki/dumper/Dumper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mediawiki/importer/Revision.java" afterPath="$PROJECT_DIR$/src/org/mediawiki/importer/Revision.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java" afterPath="$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java" afterPath="$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="mwdumper.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/SqlWriter15.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1362961056285" ignored="false" />
+    <file path="/SqlWriter15.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1363026179439" ignored="false" />
     <file path="/Dummy.txt" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1362962013300" ignored="false" />
+    <file path="/Revision.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1363025823400" ignored="false" />
+    <file path="/XmlDumpReader.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1363026563243" ignored="false" />
+    <file path="/InfoBoxFilter.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1363004669784" ignored="false" />
+    <file path="/Dumper.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1363004657842" ignored="false" />
+    <file path="/fragment.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1363026787934" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,50 +68,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java" line="169" class="org.mediawiki.importer.XmlDumpReader" package="org.mediawiki.importer">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java" line="171" class="org.mediawiki.importer.XmlDumpReader" package="org.mediawiki.importer">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java" line="363" class="org.mediawiki.importer.XmlDumpReader" package="org.mediawiki.importer">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -108,10 +77,80 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Revision.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="XmlDumpReader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="430" column="0" selection-start="13417" selection-end="13417" vertical-scroll-proportion="-3.8">
+              <folding>
+                <element signature="e#0#14709#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#5493#5509#0" expanded="true" />
+                <element signature="e#5582#5598#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Table Alter" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Table Alter">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="0" selection-start="1810" selection-end="1810" vertical-scroll-proportion="0.9403509">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XML11Configuration.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/xerces/xercesImpl/2.7.1/xercesImpl-2.7.1.jar!/org/apache/xerces/parsers/XML11Configuration.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="118" column="0" selection-start="10176" selection-end="10176" vertical-scroll-proportion="-1.76">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SqlWriter15.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="83" column="27" selection-start="2980" selection-end="2980" vertical-scroll-proportion="-3.44">
+              <folding>
+                <element signature="e#0#4660#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dumper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/dumper/Dumper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="286" column="6" selection-start="9071" selection-end="9071" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RevisionListFilter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/RevisionListFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="31" selection-start="1414" selection-end="1436" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Revision.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/Revision.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="42" selection-start="1300" selection-end="1300" vertical-scroll-proportion="0.20204082">
+            <state line="38" column="33" selection-start="1459" selection-end="1474" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DumperWindowForm.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/dumper/gui/DumperWindowForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="4" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -129,27 +168,7 @@
       <file leaf-file-name="XmlDumpWriter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="27" selection-start="4954" selection-end="4958" vertical-scroll-proportion="-15.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SqlWriter15.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="49" selection-start="2389" selection-end="2389" vertical-scroll-proportion="-2.96">
-              <folding>
-                <element signature="e#0#4353#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XmlDumpReader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="205" column="46" selection-start="7012" selection-end="7020" vertical-scroll-proportion="-4.64">
+            <state line="153" column="52" selection-start="5096" selection-end="5097" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -175,7 +194,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/org/mediawiki/importer/TitleTest.java" />
+        <option value="$PROJECT_DIR$/src/org/mediawiki/importer/InfoBoxFilter.java" />
+        <option value="$PROJECT_DIR$/Kişi Şablonları" />
+        <option value="$PROJECT_DIR$/src/org/mediawiki/dumper/Dumper.java" />
+        <option value="$PROJECT_DIR$/src/org/mediawiki/importer/Revision.java" />
         <option value="$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java" />
+        <option value="$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java" />
+        <option value="$PROJECT_DIR$/Table Alter" />
       </list>
     </option>
   </component>
@@ -209,8 +234,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1296" />
+    <option name="width" value="1292" />
     <option name="height" value="776" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -310,7 +334,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="mwdumper" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -482,7 +512,7 @@
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <frame x="-8" y="0" width="1292" height="776" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -493,12 +523,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14667746" sideWeight="0.8363047" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23987034" sideWeight="0.8363047" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1636953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2406504" sideWeight="0.50405186" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14667746" sideWeight="0.43922204" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2406504" sideWeight="0.48460293" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.90275526" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -565,101 +595,64 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/NamespaceFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="13" selection-start="1245" selection-end="1245" vertical-scroll-proportion="-0.76445395">
+        <state line="29" column="24" selection-start="1245" selection-end="1260" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/TimeStampFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="50" selection-start="1353" selection-end="1374" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/LatestFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="13" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/PageFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="22" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/AfterTimeStampFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="13" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.2246696">
+        <state line="29" column="49" selection-start="1311" selection-end="1311" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/TitleTest.java">
+    <entry file="file://$PROJECT_DIR$/Kişi Şablonları">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="32" selection-start="2489" selection-end="2489" vertical-scroll-proportion="0.2505263">
+        <state line="1" column="1" selection-start="0" selection-end="1414" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/RevisionListFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/dumper/gui/DumperWindowForm.form">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="449" column="20" selection-start="23789" selection-end="23789" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="48" selection-start="5397" selection-end="5397" vertical-scroll-proportion="0.43465045">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter14.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="17" selection-start="1993" selection-end="1993" vertical-scroll-proportion="-0.9463277">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="398" selection-end="398" vertical-scroll-proportion="-4.4943504">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/dumper/Dumper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="256" column="31" selection-start="8004" selection-end="8004" vertical-scroll-proportion="0.40960452">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="79" selection-end="79" vertical-scroll-proportion="0.17525773">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/DumpWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="72" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.56958765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="205" column="46" selection-start="7012" selection-end="7020" vertical-scroll-proportion="-4.64">
+        <state line="34" column="31" selection-start="1414" selection-end="1436" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="27" selection-start="4954" selection-end="4958" vertical-scroll-proportion="-15.0">
+        <state line="153" column="52" selection-start="5096" selection-end="5097" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java">
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/dumper/gui/DumperWindowForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="49" selection-start="2389" selection-end="2389" vertical-scroll-proportion="-2.96">
-          <folding>
-            <element signature="e#0#4353#0" expanded="true" />
-          </folding>
+        <state line="13" column="4" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -670,9 +663,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/xerces/xercesImpl/2.7.1/xercesImpl-2.7.1.jar!/org/apache/xerces/parsers/XML11Configuration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="0" selection-start="10176" selection-end="10176" vertical-scroll-proportion="-1.76">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="27" selection-start="2980" selection-end="2980" vertical-scroll-proportion="-3.44">
+          <folding>
+            <element signature="e#0#4660#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/Revision.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="42" selection-start="1300" selection-end="1300" vertical-scroll-proportion="0.20204082">
+        <state line="38" column="33" selection-start="1459" selection-end="1474" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/dumper/Dumper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="286" column="6" selection-start="9071" selection-end="9071" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="430" column="0" selection-start="13417" selection-end="13417" vertical-scroll-proportion="-3.8">
+          <folding>
+            <element signature="e#0#14709#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#5493#5509#0" expanded="true" />
+            <element signature="e#5582#5598#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Table Alter">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="1810" selection-end="1810" vertical-scroll-proportion="0.9403509">
           <folding />
         </state>
       </provider>

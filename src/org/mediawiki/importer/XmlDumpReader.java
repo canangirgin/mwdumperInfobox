@@ -27,11 +27,7 @@ package org.mediawiki.importer;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TimeZone;
+import java.util.*;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -56,8 +52,61 @@ public class XmlDumpReader  extends DefaultHandler {
 	Contributor contrib;
 	Revision rev;
 	int nskey;
-	
-	boolean abortFlag;
+
+    //Canan
+    public List<String> infoboxFilter =  Arrays.asList("Asker bilgi kutusu", "Astronot bilgi kutusu", "Basketbolcu bilgi kutusu",
+            "Beyzbolcu bilgi kutusu",
+            "Bilardo oyuncusu bilgi kutusu",
+            "Bilim adamı bilgi kutusu",
+            "Bisikletçi bilgi kutusu",
+            "Boksör bilgi kutusu",
+            "Buz patencisi bilgi kutusu",
+            "Casus bilgi kutusu",
+            "F1 Sürücü Kaydı",
+            "Filozof bilgi kutusu",
+            "Futbolcu bilgi kutusu",
+            "Gazeteci bilgi kutusu",
+            "Go oyuncusu",
+            "Golf oyuncusu bilgi kutusu",
+            "Güreşçi bilgi kutusu",
+            "Hakem bilgi kutusu",
+            "Halife bilgi kutusu",
+            "Hanedan bilgi kutusu",
+            "Hükümdar bilgi kutusu",
+            "Jimnastikçi bilgi kutusu",
+            "Kişi bilgi kutusu",
+            "Kişi künyesi",
+            "Komedyen bilgi kutusu",
+            "Korsan bilgi kutusu",
+            "Kraliyet bilgi kutusu",
+            "Makam sahibi bilgi kutusu",
+            "Manken bilgi kutusu",
+            "Mimar bilgi kutusu",
+            "Motosiklet sürücüsü bilgi kutusu",
+            "Müslüman bilgin bilgi kutusu",
+            "Müzik sanatçısı bilgi kutusu",
+            "NBA oyuncusu bilgi kutusu",
+            "NHL oyuncusu bilgi kutusu",
+            "Oyuncu bilgi kutusu",
+            "Porno yıldızı bilgi kutusu",
+            "Red Bull Air Race pilotu bilgi kutusu",
+            "Sanatçı bilgi kutusu",
+            "Satranç oyuncusu bilgi kutusu",
+            "Seri katil bilgi kutusu",
+            "Snooker Oyuncusu Bilgi Kutusu",
+            "Sporcu bilgi kutusu",
+            "Sunucu bilgi kutusu",
+            "Süpersport sürücüsü",
+            "Tarihçi bilgi kutusu",
+            "Tenisçi bilgi kutusu",
+            "Türkücü bilgi kutusu",
+            "Voleybolcu bilgi kutusu",
+            "WRC yarışçısı bilgi kutusu",
+            "Yazar bilgi kutusu",
+            "Yüzücü bilgi kutusu",
+            "Çizgi roman yaratıcısı bilgi kutusu",
+            "İnternet ünlüsü bilgi kutusu");
+    	boolean abortFlag;
 	
 	/**
 	 * Initialize a processor for a MediaWiki XML dump stream.
@@ -72,9 +121,10 @@ public class XmlDumpReader  extends DefaultHandler {
 		buffer = new char[4096];
 		len = 0;
 		hasContent = false;
-	}
-	
-	/**
+    }
+
+
+    /**
 	 * Reads through the entire XML dump on the input stream, sending
 	 * events to the DumpWriter as it goes. May throw exceptions on
 	 * invalid input or due to problems with the output.
@@ -84,8 +134,7 @@ public class XmlDumpReader  extends DefaultHandler {
 		try {
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser parser = factory.newSAXParser();
-	
-			parser.parse(input, this);
+	             			parser.parse(input, this);
 		} catch (ParserConfigurationException e) {
 			throw (IOException)new IOException(e.getMessage()).initCause(e);
 		} catch (SAXException e) {
@@ -362,10 +411,30 @@ public class XmlDumpReader  extends DefaultHandler {
 
 	void readText() {
 		rev.Text = bufferContentsOrNull();
-		if (rev.Text==null && !deleted) rev.Text = ""; //NOTE: null means deleted/supressed
+		if (rev.Text==null && !deleted)
+            rev.Text = ""; //NOTE: null means deleted/supressed
+        //Canan
+        else{
+         readInfoBox();
+         if (!rev.InfoBox.isEmpty()) System.out.println(rev.InfoBox);
+        }
 	}
-	
-	// -----------
+
+    private void readInfoBox() {
+            for (String filter :infoboxFilter)
+            {
+                int infoBoxStart = rev.Text.indexOf("{{"+filter);
+                if (infoBoxStart>0)
+                {
+                    rev.InfoBox= rev.Text.substring(infoBoxStart+2, rev.Text.indexOf("}}",infoBoxStart)-2) ;
+                    rev.InfoboxTemplate= rev.Text.substring(infoBoxStart+2, rev.Text.indexOf("\n",infoBoxStart));
+                    return;
+                }
+            }
+
+    }
+
+    // -----------
 	void openContributor() {
 		//XXX: record deleted flag?! as it is, any empty <contributor> tag counts as "deleted"
 		contrib =  new Contributor();
@@ -402,4 +471,6 @@ public class XmlDumpReader  extends DefaultHandler {
 			Integer.parseInt(trimmed.substring(17,17+2)));  // second
 		return ts;
 	}
+
+
 }

@@ -1,0 +1,53 @@
+
+
+CREATE TABLE `infobox` (
+  `rev_id` int(11) NOT NULL DEFAULT '0',
+  `infobox` varchar(4000) COLLATE utf8_unicode_ci NOT NULL,
+  `infobox_template` varchar(4000) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`rev_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci$$
+
+
+delimiter $$
+
+CREATE TABLE `page` (
+  `page_id` int(11) NOT NULL DEFAULT '0',
+  `page_namespace` int(11) NOT NULL,
+  `page_title` text CHARACTER SET utf8 NOT NULL,
+  `page_restrictions` blob NOT NULL,
+  `page_counter` int(11) NOT NULL DEFAULT '0',
+  `page_is_redirect` int(11) NOT NULL DEFAULT '0',
+  `page_is_new` int(11) NOT NULL DEFAULT '0',
+  `page_random` double NOT NULL,
+  `page_touched` blob NOT NULL,
+  `page_latest` int(11) NOT NULL,
+  `page_len` int(11) NOT NULL,
+  PRIMARY KEY (`page_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=binary$$
+
+delimiter $$
+
+CREATE TABLE `revision` (
+  `rev_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `rev_page` int(10) unsigned NOT NULL,
+  `rev_text_id` int(10) unsigned NOT NULL,
+  `rev_comment` blob NOT NULL,
+  `rev_user` int(10) unsigned NOT NULL DEFAULT '0',
+  `rev_user_text` varbinary(255) NOT NULL DEFAULT '',
+  `rev_timestamp` binary(14) NOT NULL DEFAULT '\0\0\0\0\0\0\0\0\0\0\0\0\0\0',
+  `rev_minor_edit` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `rev_deleted` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `rev_len` int(10) unsigned DEFAULT NULL,
+  `rev_parent_id` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`rev_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=28201307 DEFAULT CHARSET=binary MAX_ROWS=10000000 AVG_ROW_LENGTH=1024$$
+
+        delimiter $$
+
+        CREATE TABLE `text` (
+          `old_id` int(11) NOT NULL,
+          `old_text` longblob NOT NULL,
+          `old_flags` blob NOT NULL,
+          PRIMARY KEY (`old_id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=binary$$
+

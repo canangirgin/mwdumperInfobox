@@ -34,6 +34,10 @@ public class Revision {
 	public String Comment;
 	public String Text;
 	public boolean Minor;
+    //Canan
+    public String InfoBox;
+    public String InfoboxTemplate;
+
 	
 	public boolean isRedirect() {
 		// FIXME
@@ -43,6 +47,8 @@ public class Revision {
 	public Revision() {
 		Comment = "";
 		Text = "";
+        InfoBox= "";
+        InfoboxTemplate="";
 		Minor = false;
 	}
 }

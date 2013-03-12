@@ -284,7 +284,7 @@ class Dumper {
 			return new BeforeTimeStampFilter(sink, param);
 		else if (filter.equals("after"))
 			return new AfterTimeStampFilter(sink, param);
-		else
+      	else
 			throw new IllegalArgumentException("Filter unknown: " + filter);
 	}
 }
