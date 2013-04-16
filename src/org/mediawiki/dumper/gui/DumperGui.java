@@ -1,21 +1,15 @@
 package org.mediawiki.dumper.gui;
 
-import java.sql.SQLException;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import org.mediawiki.dumper.Tools;
+import org.mediawiki.importer.*;
+
+import javax.swing.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
-
-import org.mediawiki.dumper.Tools;
-import org.mediawiki.importer.DumpWriter;
-import org.mediawiki.importer.SqlServerStream;
-import org.mediawiki.importer.SqlWriter;
-import org.mediawiki.importer.SqlWriter14;
-import org.mediawiki.importer.SqlWriter15;
-import org.mediawiki.importer.XmlDumpReader;
 
 public class DumperGui {
 	private DumperWindow gui;
@@ -35,8 +29,9 @@ public class DumperGui {
 	String port = "3306";
 	String username = "root";
 	String password = "";
-	
-	String schema = "1.5";
+
+
+    String schema = "1.5";
 	String dbname = "wikidb";
 	String prefix = "";
 	

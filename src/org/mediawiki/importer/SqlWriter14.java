@@ -59,7 +59,9 @@ public class SqlWriter14 extends SqlWriter {
 	}
 	
 	private void writeOldRevision(Page page, Revision revision) throws IOException {
-		bufferInsertRow("old", new Object[][] {
+		//TODO Canan Burayı açmayı unutma
+		/*
+        bufferInsertRow("old", new Object[][] {
 				{"old_id", new Integer(revision.Id)},
 				{"old_namespace", page.Title.Namespace},
 				{"old_title", titleFormat(page.Title.Text)},
@@ -71,10 +73,13 @@ public class SqlWriter14 extends SqlWriter {
 				{"old_minor_edit", revision.Minor ? ONE : ZERO},
 				{"old_flags", "utf-8"},
 				{"inverse_timestamp", inverseTimestamp(revision.Timestamp)}});
+				*/
 	}
 	
 	private void writeCurRevision(Page page, Revision revision) throws IOException {
-		bufferInsertRow("cur", new Object[][] {
+		//TODO Canan Burayı açmayı unutma
+		/*
+        bufferInsertRow("cur", new Object[][] {
 				{"cur_id", new Integer(page.Id)},
 				{"cur_namespace", page.Title.Namespace},
 				{"cur_title", titleFormat(page.Title.Text)},
@@ -90,6 +95,7 @@ public class SqlWriter14 extends SqlWriter {
 				{"cur_random", traits.getRandom()},
 				{"cur_touched", traits.getCurrentTime()},
 				{"inverse_timestamp", inverseTimestamp(revision.Timestamp)}});
+				*/
 		checkpoint();
 	}
 }

@@ -25,17 +25,16 @@
 
 package org.mediawiki.importer;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.*;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.*;
 
 public class XmlDumpReader  extends DefaultHandler {
 	InputStream input;
@@ -412,11 +411,15 @@ public class XmlDumpReader  extends DefaultHandler {
 	void readText() {
 		rev.Text = bufferContentsOrNull();
 		if (rev.Text==null && !deleted)
-            rev.Text = ""; //NOTE: null means deleted/supressed
-        //Canan
+            rev.Text = "";
+            //Canan
         else{
          readInfoBox();
-         if (!rev.InfoBox.isEmpty()) System.out.println(rev.InfoBox);
+        if (rev.InfoBox !=null && rev.InfoBox.Text !=null)
+         {System.out.println(rev.InfoBox.Text);
+            rev.InfoBox.TextToProperty();
+            System.out.println(Character.getNumericValue('|'));
+         }
         }
 	}
 
@@ -426,8 +429,21 @@ public class XmlDumpReader  extends DefaultHandler {
                 int infoBoxStart = rev.Text.indexOf("{{"+filter);
                 if (infoBoxStart>0)
                 {
-                    rev.InfoBox= rev.Text.substring(infoBoxStart+2, rev.Text.indexOf("}}",infoBoxStart)-2) ;
-                    rev.InfoboxTemplate= rev.Text.substring(infoBoxStart+2, rev.Text.indexOf("\n",infoBoxStart));
+                   try{
+                    rev.InfoBox= new Infobox();
+                    rev.InfoBox.Text= rev.Text.substring(rev.Text.indexOf("|",infoBoxStart) , rev.Text.indexOf("}}",infoBoxStart)-2).toLowerCase();
+                    rev.InfoBox.Template= rev.Text.substring(infoBoxStart+2, rev.Text.indexOf("\n",infoBoxStart)).toLowerCase();
+                   if (rev.Id==11290729)
+                   {
+                       String dur="";
+                   }
+                   }catch(Exception ex)
+                   {
+                       //TODO CANAN burayı incele
+                       System.out.println(ex.getMessage());
+
+                   }
+
                     return;
                 }
             }

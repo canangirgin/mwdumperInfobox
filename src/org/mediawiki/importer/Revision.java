@@ -35,8 +35,8 @@ public class Revision {
 	public String Text;
 	public boolean Minor;
     //Canan
-    public String InfoBox;
-    public String InfoboxTemplate;
+    public Infobox InfoBox;
+
 
 	
 	public boolean isRedirect() {
@@ -47,8 +47,9 @@ public class Revision {
 	public Revision() {
 		Comment = "";
 		Text = "";
-        InfoBox= "";
-        InfoboxTemplate="";
-		Minor = false;
+        InfoBox = null;
+   		Minor = false;
 	}
+
+
 }

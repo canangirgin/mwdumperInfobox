@@ -28,6 +28,10 @@
 package org.mediawiki.importer;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 public class SqlWriter15 extends SqlWriter {
 	private Page currentPage;
@@ -65,16 +69,20 @@ public class SqlWriter15 extends SqlWriter {
 	static final int DELETED_RESTRICTED = 8;
 	
 	public void writeRevision(Revision revision) throws IOException {
-		bufferInsertRow(traits.getTextTable(), new Object[][] {
+		//TODO Canan Burayı Açmayı unutma
+        /*
+        bufferInsertRow(traits.getTextTable(), new Object[][] {
 				{"old_id", new Integer(revision.Id)},
 				{"old_text", revision.Text == null ? "" : revision.Text},
 				{"old_flags", "utf-8"}});
+				*/
 		 //System.out.println(revision.Text);
 		int rev_deleted = 0; 
 		if (revision.Contributor.Username==null) rev_deleted |= DELETED_USER;
 		if (revision.Comment==null) rev_deleted |= DELETED_COMMENT;
 		if (revision.Text==null) rev_deleted |= DELETED_TEXT;
-
+         //TODO CANAN Burayı Açmayı unutma
+        /*
 		bufferInsertRow("revision", new Object[][] {
 				{"rev_id", new Integer(revision.Id)},
 				{"rev_page", new Integer(currentPage.Id)},
@@ -85,18 +93,51 @@ public class SqlWriter15 extends SqlWriter {
 				{"rev_timestamp", timestampFormat(revision.Timestamp)},
 				{"rev_minor_edit", revision.Minor ? ONE : ZERO},
 				{"rev_deleted", rev_deleted==0 ? ZERO : new Integer(rev_deleted) }});
-        //
-        if (!revision.InfoBox.isEmpty())
+				*/
+        //  Canan infobox tablosuna yazdırıyor
+        if (revision.InfoBox!=null)
         {
-            bufferInsertRow("infobox", new Object[][] {
-                    {"rev_id", new Integer(revision.Id)},
-                    {"infobox",revision.InfoBox},
-                    {"infobox_template",revision.InfoboxTemplate}});
+         /* revision.InfoBox.Propetys.put("rev_id",new Integer(revision.Id));
+          revision.InfoBox.Propetys.put("infobox",revision.InfoBox.Text);
+          revision.InfoBox.Propetys.put("infobox_template",revision.InfoBox.Template);
+         */
+         Object[][] infoParam= new Object[revision.InfoBox.Propetys.size()+3][1];
+         infoParam[0]= new Object[]{"infobox",revision.InfoBox.Text};
+         infoParam[1]= new Object[]{"rev_id", new Integer(revision.Id)};
+         infoParam[2]= new Object[]{"infobox_template",revision.InfoBox.Template};
+        int i =3;
+            Set entries = revision.InfoBox.Propetys.entrySet();
+            Iterator entriesIterator = entries.iterator();
+            while(entriesIterator.hasNext()){
+
+                Map.Entry mapping = (Map.Entry) entriesIterator.next();
+                infoParam[i]= new Object[]{mapping.getKey().toString(), ""+mapping.getValue()};
+                 i++;
+            }
+            //bufferInsertRow("infobox",getArrayFromHash(revision.InfoBox.Propetys));
+          bufferInsertRow("infobox",infoParam);
         }
-		
+        //TODO Canan burası Deneme Silinecek
+        checkpoint();
 		lastRevision = revision;
 	}
-	
+    public static Object[][] getArrayFromHash(HashMap<Object,Object> data){
+        Object[][] arr = new Object[data.size()][2];
+        Set entries = data.entrySet();
+        Iterator entriesIterator = entries.iterator();
+
+        int i = 0;
+        while(entriesIterator.hasNext()){
+
+            Map.Entry mapping = (Map.Entry) entriesIterator.next();
+
+            arr[i][0] = mapping.getKey().toString();
+            arr[i][1] = mapping.getValue().toString();
+
+            i++;
+        }
+        return arr;
+    }
 	private static int lengthUtf8(String s) {
 		final int slen = s.length();
 		final char[] buf = Buffer.get(slen);
@@ -120,7 +161,9 @@ public class SqlWriter15 extends SqlWriter {
 	}
 	
 	private void updatePage(Page page, Revision revision) throws IOException {
-		bufferInsertRow("page", new Object[][] {
+        //TODO CANAN Burayı Açmayı unutma
+        /*
+			bufferInsertRow("page", new Object[][] {
 				{"page_id", new Integer(page.Id)},
 				{"page_namespace", page.Title.Namespace},
 				{"page_title", titleFormat(page.Title.Text)},
@@ -132,6 +175,7 @@ public class SqlWriter15 extends SqlWriter {
 				{"page_touched", traits.getCurrentTime()},
 				{"page_latest", new Integer(revision.Id)},
 				{"page_len", new Integer(lengthUtf8(revision.Text))}});
+				*/
 		checkpoint();
 	}
 

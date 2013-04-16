@@ -70,7 +70,11 @@ public class DumperWindowForm extends javax.swing.JFrame {
             }
         });
 
-        fileText.setText("(no dump file selected)");
+       //Canan
+       //fileText.setText("(no dump file selected)");                                       //
+
+        fileText.setText("C:\\Users\\hs\\repo\\dumpDir\\trwiki\\20130212\\trwiki-20130212-pages-articles.xml");
+
         fileText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 fileTextFocusGained(evt);
@@ -110,8 +114,11 @@ public class DumperWindowForm extends javax.swing.JFrame {
         userLabel.setText("User");
 
         userText.setText("root");
+        //Canan ekledim
+        passwordText.setText("root");
 
         passwordLabel.setText("Password");
+
 
         connectButton.setText("Connect");
         connectButton.addActionListener(new java.awt.event.ActionListener() {
