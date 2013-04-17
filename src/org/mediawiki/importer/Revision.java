@@ -25,7 +25,7 @@
 
 package org.mediawiki.importer;
 
-import java.util.Calendar;
+import java.util.*;
 
 public class Revision {
 	public int Id;
@@ -36,6 +36,7 @@ public class Revision {
 	public boolean Minor;
     //Canan
     public Infobox InfoBox;
+    public HashMap<Integer,String> Patterns;
 
 
 	
@@ -50,6 +51,19 @@ public class Revision {
         InfoBox = null;
    		Minor = false;
 	}
+    /*
+    public void extractPattern() {
+        Set entries = InfoBox.Propetys.entrySet();
+        Iterator entriesIterator = entries.iterator();
+        while(entriesIterator.hasNext()){
+            Map.Entry mapping = (Map.Entry) entriesIterator.next();
+            Patterns.put(mapping.getKey(), findPattern(mapping.getValue()));
+        }
+    }
 
+    private String findPattern(Object value) {
+         //To change body of created methods use File | Settings | File Templates.
+    }
 
+       */
 }

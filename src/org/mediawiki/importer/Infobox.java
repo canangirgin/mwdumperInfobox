@@ -28,11 +28,11 @@ public class Infobox {
         // {"infobox_template",revision.InfoBox.Template}};
     }
     public void TextToProperty() {
-        System.out.println(Text);
-         int indexStartValue = 0;
+
+        int indexStartValue = 0;
         boolean exit = true;
 
-        for (String property : Text.replace("\n","").split("\\|"))
+        for (String property : Text.replaceFirst("\\|","").split("\n\\|"))
              if (!property.isEmpty()) {
                 try {
                     String key = property.substring(0, property.indexOf("=")).trim();
@@ -50,17 +50,51 @@ public class Infobox {
     }
 
     private void extractProperty(String key, String value) {
+       //TODO bayrak simgeleri silmek lazım
         for (KeyValue bulunacakDb: InfoBoxConst.PropetyBulunacak)
         {
         for (String bulunacakValue:bulunacakDb.values)
         {
+            //value parçalanacak mı?
+            if (bulunacakValue.contains("/"))
+            {
+                String[] bulunacakValueProp=bulunacakValue.toLowerCase().split("/");
+                if (key.trim().equals(bulunacakValueProp[0].trim()))
+                {
+                String[] splitValue=value.split("<br/>");
+                if (splitValue.length >=Integer.parseInt(bulunacakValueProp[1]))
+                {
+                    String[] splitValueRow= splitValue[Integer.parseInt(bulunacakValueProp[1])-1].split(",");
+                    if (splitValue.length >=Integer.parseInt(bulunacakValueProp[2]))
+                    {
+                        value= getClearText(splitValueRow[Integer.parseInt(bulunacakValueProp[2])-1]);
+                        Propetys.put(bulunacakDb.dbKey, value);
+                        return;
+                    }
+                }
+              }
+            }
+            else
             if (key.trim().startsWith(bulunacakValue.toLowerCase()))
             {
-                Propetys.put(bulunacakDb.dbKey, value);
+                value=  getClearText(value);
+               Propetys.put(bulunacakDb.dbKey,value);
                 return;
             }
         }
         }
+    }
+
+    //Veri temizleme işlemleri
+    private String getClearText(String text) {
+        if(text.contains("{{bayraksimge"))
+        {
+            text=text.substring(0,text.indexOf("{{bayraksimge"))+text.substring(text.indexOf("}}",text.indexOf("{{bayraksimge"))+2);
+        }
+        text=text.replace("[[","");
+        text=text.replace("]]","");
+
+        return text;
     }
 }
 

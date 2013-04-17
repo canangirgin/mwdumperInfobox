@@ -14,6 +14,12 @@ public class InfoBoxConst {
     public static ArrayList<KeyValue> PropetyBulunacak =new ArrayList<KeyValue>();
     static {
         PropetyBulunacak.add(new KeyValue("p_ad", Arrays.asList("ad","isim","name")));
+        PropetyBulunacak.add(new KeyValue("p_meslek", Arrays.asList("mesle")));
+        PropetyBulunacak.add(new KeyValue("p_dogum_yer", Arrays.asList("doğum_yer","doğduğuşehir","doğum yer","yer","doğum/2/1")));
+        PropetyBulunacak.add(new KeyValue("p_dogum_ulke", Arrays.asList("doğduğuülke","doğum/2/2")));
+
+            PropetyBulunacak.add(new KeyValue("p_dogum_tar", Arrays.asList("doğumtarih","doğum_tarih","doğum/1/1")));
+
     }
 
 }

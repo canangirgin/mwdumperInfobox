@@ -416,9 +416,9 @@ public class XmlDumpReader  extends DefaultHandler {
         else{
          readInfoBox();
         if (rev.InfoBox !=null && rev.InfoBox.Text !=null)
-         {System.out.println(rev.InfoBox.Text);
+         {
             rev.InfoBox.TextToProperty();
-            System.out.println(Character.getNumericValue('|'));
+           // rev.extractPattern();
          }
         }
 	}
@@ -429,14 +429,15 @@ public class XmlDumpReader  extends DefaultHandler {
                 int infoBoxStart = rev.Text.indexOf("{{"+filter);
                 if (infoBoxStart>0)
                 {
+                    if (rev.Id== 12770054)
+                {
+                    String dur="";
+                }
                    try{
                     rev.InfoBox= new Infobox();
-                    rev.InfoBox.Text= rev.Text.substring(rev.Text.indexOf("|",infoBoxStart) , rev.Text.indexOf("}}",infoBoxStart)-2).toLowerCase();
-                    rev.InfoBox.Template= rev.Text.substring(infoBoxStart+2, rev.Text.indexOf("\n",infoBoxStart)).toLowerCase();
-                   if (rev.Id==11290729)
-                   {
-                       String dur="";
-                   }
+                       findInfoBox(infoBoxStart);
+                       rev.InfoBox.Template= rev.Text.substring(infoBoxStart+2, rev.Text.indexOf("\n",infoBoxStart)).toLowerCase();
+
                    }catch(Exception ex)
                    {
                        //TODO CANAN burayı incele
@@ -448,6 +449,43 @@ public class XmlDumpReader  extends DefaultHandler {
                 }
             }
 
+    }
+
+    private void findInfoBox(int infoBoxStart) {
+        if (rev.Text.split("}}").length==2)
+        {
+          rev.InfoBox.Text= rev.Text.substring(rev.Text.indexOf("|",infoBoxStart) , rev.Text.indexOf("}}",infoBoxStart)).toLowerCase();
+            if (rev.InfoBox.Text.length()<4000) return;
+        }
+
+        if (rev.Text.split("\n}}").length>=2)
+        {
+            rev.InfoBox.Text= rev.Text.substring(rev.Text.indexOf("|",infoBoxStart) , rev.Text.indexOf("\n}}",infoBoxStart)).toLowerCase();
+            if (rev.InfoBox.Text.length()<4000) return;
+        }
+        if (rev.Text.split("\\n\\|}}").length>=2)
+        {
+            rev.InfoBox.Text= rev.Text.substring(rev.Text.indexOf("|",infoBoxStart) , rev.Text.indexOf("|}}",infoBoxStart)).toLowerCase();
+            if (rev.InfoBox.Text.length()<4000) return;
+        }
+        if (rev.Text.split("<br/>}}").length>=2)
+        {
+            rev.InfoBox.Text= rev.Text.substring(rev.Text.indexOf("|",infoBoxStart) , rev.Text.indexOf("<br/>}}",infoBoxStart)).toLowerCase();
+            if (rev.InfoBox.Text.length()<4000) return;
+        }
+        if (rev.Text.split("<br>}}").length>=2)
+        {
+            rev.InfoBox.Text= rev.Text.substring(rev.Text.indexOf("|",infoBoxStart) , rev.Text.indexOf("<br>}}",infoBoxStart)).toLowerCase();
+            if (rev.InfoBox.Text.length()<4000) return;
+        }
+
+        if (rev.Text.split(" }}").length>=2)
+        {
+            rev.InfoBox.Text= rev.Text.substring(rev.Text.indexOf("|",infoBoxStart) , rev.Text.indexOf(" }}",infoBoxStart)).toLowerCase();
+            if (rev.InfoBox.Text.length()<4000) return;
+        }
+        if (rev.InfoBox.Text.length()>4000)
+            rev.InfoBox.Text  =null;
     }
 
     // -----------
