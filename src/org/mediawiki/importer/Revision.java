@@ -36,7 +36,7 @@ public class Revision {
 	public boolean Minor;
     //Canan
     public Infobox InfoBox;
-    public HashMap<Integer,String> Patterns;
+    public HashMap<String,String> Patterns;
 
 
 	
@@ -50,20 +50,51 @@ public class Revision {
 		Text = "";
         InfoBox = null;
    		Minor = false;
+        Patterns = new HashMap<String, String>();
 	}
-    /*
+
     public void extractPattern() {
+        String p_ad=""+InfoBox.Propetys.get("p_ad");
+        if (!p_ad.isEmpty() & !p_ad.equals("null"))
+            {
         Set entries = InfoBox.Propetys.entrySet();
         Iterator entriesIterator = entries.iterator();
         while(entriesIterator.hasNext()){
             Map.Entry mapping = (Map.Entry) entriesIterator.next();
-            Patterns.put(mapping.getKey(), findPattern(mapping.getValue()));
+           if (!(""+mapping.getKey()).equals("p_ad"))
+            Patterns.put(""+mapping.getKey(), findPattern(p_ad,""+mapping.getValue()));
         }
+                }
     }
+     //TODO canan burayı iyi duşunmak lazım
+    private String findPattern(String name, String value) {
+         if (!value.isEmpty()& !value.equals("null"))
 
-    private String findPattern(Object value) {
-         //To change body of created methods use File | Settings | File Templates.
-    }
+             {
+                 int valueIndex= Text.indexOf(value);
+                  int keyIndex=-1;
 
-       */
+                  if (valueIndex>-1)
+                      {
+                       int keyIndexSonra = Text.indexOf(name,valueIndex);
+                       int keyIndexOnce = Text.split(value)[0].lastIndexOf(name);
+                      if (Math.abs(valueIndex-keyIndexOnce)<Math.abs(valueIndex-keyIndexSonra))
+                      {
+                          keyIndex=  keyIndexOnce;
+                      }
+                      }
+
+               if (valueIndex>keyIndex)
+                   {if (keyIndex<20)keyIndex=0;else keyIndex=keyIndex -20;
+                   if (valueIndex+20>Text.length())valueIndex=Text.length();else valueIndex=valueIndex +20;
+                 return Text.substring(keyIndex,valueIndex);
+                       }
+               else {
+                 if (valueIndex<20)valueIndex=0;else valueIndex=valueIndex -20;
+                 if (keyIndex+20>Text.length())keyIndex=Text.length();else keyIndex=keyIndex +20;
+                 return Text.substring(valueIndex,keyIndex);
+                 }
+   }
+        return null;
+}
 }

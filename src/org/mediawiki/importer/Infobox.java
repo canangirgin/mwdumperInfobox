@@ -61,7 +61,12 @@ public class Infobox {
                 String[] bulunacakValueProp=bulunacakValue.toLowerCase().split("/");
                 if (key.trim().equals(bulunacakValueProp[0].trim()))
                 {
-                String[] splitValue=value.split("<br/>");
+                    String[] splitValue;
+                   if (value.contains("<br/>"))
+                    {
+                         splitValue=value.split("<br/>");
+                    }else{
+                     splitValue=value.split("<br />");}
                 if (splitValue.length >=Integer.parseInt(bulunacakValueProp[1]))
                 {
                     String[] splitValueRow= splitValue[Integer.parseInt(bulunacakValueProp[1])-1].split(",");

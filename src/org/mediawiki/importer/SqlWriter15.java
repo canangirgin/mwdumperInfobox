@@ -101,21 +101,38 @@ public class SqlWriter15 extends SqlWriter {
           revision.InfoBox.Propetys.put("infobox",revision.InfoBox.Text);
           revision.InfoBox.Propetys.put("infobox_template",revision.InfoBox.Template);
          */
-         Object[][] infoParam= new Object[revision.InfoBox.Propetys.size()+3][1];
-         infoParam[0]= new Object[]{"infobox",revision.InfoBox.Text};
-         infoParam[1]= new Object[]{"rev_id", new Integer(revision.Id)};
-         infoParam[2]= new Object[]{"infobox_template",revision.InfoBox.Template};
-        int i =3;
+            Object[][] infoParam= new Object[revision.InfoBox.Propetys.size()+3][1];
+            infoParam[0]= new Object[]{"infobox",revision.InfoBox.Text};
+            infoParam[1]= new Object[]{"rev_id", new Integer(revision.Id)};
+            infoParam[2]= new Object[]{"infobox_template",revision.InfoBox.Template};
+            int i =3;
             Set entries = revision.InfoBox.Propetys.entrySet();
             Iterator entriesIterator = entries.iterator();
             while(entriesIterator.hasNext()){
 
                 Map.Entry mapping = (Map.Entry) entriesIterator.next();
                 infoParam[i]= new Object[]{mapping.getKey().toString(), ""+mapping.getValue()};
-                 i++;
+                i++;
             }
             //bufferInsertRow("infobox",getArrayFromHash(revision.InfoBox.Propetys));
-          bufferInsertRow("infobox",infoParam);
+            bufferInsertRow("infobox",infoParam);
+        }
+        //Templateler yazılıyor:
+        if (revision.Patterns!=null && revision.Patterns.size()>0)
+        {
+            Object[][] patternParam= new Object[revision.Patterns.size()+1][1];
+            patternParam[0]= new Object[]{"rev_id", new Integer(revision.Id)};
+            int i =1;
+            Set entries = revision.Patterns.entrySet();
+            Iterator entriesIterator = entries.iterator();
+            while(entriesIterator.hasNext()){
+
+                Map.Entry mapping = (Map.Entry) entriesIterator.next();
+                patternParam[i]= new Object[]{mapping.getKey().toString(), ""+mapping.getValue()};
+                i++;
+            }
+            //bufferInsertRow("infobox",getArrayFromHash(revision.InfoBox.Propetys));
+            bufferInsertRow("template",patternParam);
         }
         //TODO Canan burası Deneme Silinecek
         checkpoint();
