@@ -50,7 +50,7 @@ public class Infobox {
     }
 
     private void extractProperty(String key, String value) {
-       //TODO bayrak simgeleri silmek lazım
+       //TODO bayrak simgelerini silmek lazım
         for (KeyValue bulunacakDb: InfoBoxConst.PropetyBulunacak)
         {
         for (String bulunacakValue:bulunacakDb.values)

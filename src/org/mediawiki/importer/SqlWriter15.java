@@ -70,19 +70,19 @@ public class SqlWriter15 extends SqlWriter {
 	
 	public void writeRevision(Revision revision) throws IOException {
 		//TODO Canan Burayı Açmayı unutma
-        /*
+
         bufferInsertRow(traits.getTextTable(), new Object[][] {
 				{"old_id", new Integer(revision.Id)},
 				{"old_text", revision.Text == null ? "" : revision.Text},
 				{"old_flags", "utf-8"}});
-				*/
+
 		 //System.out.println(revision.Text);
 		int rev_deleted = 0; 
 		if (revision.Contributor.Username==null) rev_deleted |= DELETED_USER;
 		if (revision.Comment==null) rev_deleted |= DELETED_COMMENT;
 		if (revision.Text==null) rev_deleted |= DELETED_TEXT;
          //TODO CANAN Burayı Açmayı unutma
-        /*
+
 		bufferInsertRow("revision", new Object[][] {
 				{"rev_id", new Integer(revision.Id)},
 				{"rev_page", new Integer(currentPage.Id)},
@@ -93,14 +93,11 @@ public class SqlWriter15 extends SqlWriter {
 				{"rev_timestamp", timestampFormat(revision.Timestamp)},
 				{"rev_minor_edit", revision.Minor ? ONE : ZERO},
 				{"rev_deleted", rev_deleted==0 ? ZERO : new Integer(rev_deleted) }});
-				*/
+
         //  Canan infobox tablosuna yazdırıyor
         if (revision.InfoBox!=null)
         {
-         /* revision.InfoBox.Propetys.put("rev_id",new Integer(revision.Id));
-          revision.InfoBox.Propetys.put("infobox",revision.InfoBox.Text);
-          revision.InfoBox.Propetys.put("infobox_template",revision.InfoBox.Template);
-         */
+
             Object[][] infoParam= new Object[revision.InfoBox.Propetys.size()+3][1];
             infoParam[0]= new Object[]{"infobox",revision.InfoBox.Text};
             infoParam[1]= new Object[]{"rev_id", new Integer(revision.Id)};
@@ -114,10 +111,11 @@ public class SqlWriter15 extends SqlWriter {
                 infoParam[i]= new Object[]{mapping.getKey().toString(), ""+mapping.getValue()};
                 i++;
             }
-            //bufferInsertRow("infobox",getArrayFromHash(revision.InfoBox.Propetys));
+
             bufferInsertRow("infobox",infoParam);
         }
         //Templateler yazılıyor:
+        /*
         if (revision.Patterns!=null && revision.Patterns.size()>0)
         {
             Object[][] patternParam= new Object[revision.Patterns.size()+1][1];
@@ -131,11 +129,12 @@ public class SqlWriter15 extends SqlWriter {
                 patternParam[i]= new Object[]{mapping.getKey().toString(), ""+mapping.getValue()};
                 i++;
             }
-            //bufferInsertRow("infobox",getArrayFromHash(revision.InfoBox.Propetys));
+
             bufferInsertRow("template",patternParam);
         }
+        */
         //TODO Canan burası Deneme Silinecek
-        checkpoint();
+       // checkpoint();
 		lastRevision = revision;
 	}
     public static Object[][] getArrayFromHash(HashMap<Object,Object> data){
@@ -179,7 +178,7 @@ public class SqlWriter15 extends SqlWriter {
 	
 	private void updatePage(Page page, Revision revision) throws IOException {
         //TODO CANAN Burayı Açmayı unutma
-        /*
+
 			bufferInsertRow("page", new Object[][] {
 				{"page_id", new Integer(page.Id)},
 				{"page_namespace", page.Title.Namespace},
@@ -192,7 +191,7 @@ public class SqlWriter15 extends SqlWriter {
 				{"page_touched", traits.getCurrentTime()},
 				{"page_latest", new Integer(revision.Id)},
 				{"page_len", new Integer(lengthUtf8(revision.Text))}});
-				*/
+
 		checkpoint();
 	}
 

@@ -68,6 +68,7 @@ public class Revision {
     }
      //TODO canan burayı iyi duşunmak lazım
     private String findPattern(String name, String value) {
+        /*
          if (!value.isEmpty()& !value.equals("null"))
 
              {
@@ -94,7 +95,7 @@ public class Revision {
                  if (keyIndex+20>Text.length())keyIndex=Text.length();else keyIndex=keyIndex +20;
                  return Text.substring(valueIndex,keyIndex);
                  }
-   }
+   }        */
         return null;
 }
 }
