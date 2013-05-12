@@ -1,5 +1,10 @@
 package org.mediawiki.extractor;
 
+import org.mediawiki.importer.SqlServerStream;
+import org.mediawiki.importer.SqlWriter;
+import org.mediawiki.importer.SqlWriter15;
+
+import java.io.IOException;
 import java.sql.*;
 
 /**
@@ -10,38 +15,81 @@ import java.sql.*;
  * To change this template use File | Settings | File Templates.
  */
 public class InfoBoxExtractor {
-   public static Connection baglanti=null;
-    public static void main(String[] args)  {
-        System.out.println("Bağlantı sağlanıyor...");
-        try {
-            try {
-                ConnectDB();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            } catch (InstantiationException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            }
-        } catch (SQLException e) {
-            //TODO Canan Burayı yönet
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-        System.out.println("Doğum yeri extract ediliyor...");
-        BirthPlaceExtractor bExtractor= new BirthPlaceExtractor();
-        try {
-            bExtractor.Extract();
-        } catch (SQLException e) {
-            //TODO Canan Butayı yönet
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+    private static ResultSet textTable = null;
+    public static Blob textBlob = null;
+    public static Connection baglanti = null;
+    public static SqlWriter15 sqlWriter;
 
+    public static void main(String[] args) throws SQLException, IllegalAccessException, InstantiationException, ClassNotFoundException {
+        System.out.println("Bağlantı sağlanıyor...");
+        Template template = null;
+
+
+        ConnectDB();
+        sqlWriter = openWriter();
+        while (getTextTable().next()) {
+            try {
+                template = new Template();
+                textBlob = getTextTable().getBlob("old_text");
+                byte[] bdata = textBlob.getBytes(1, (int) textBlob.length());
+                template.text = new String(bdata);
+                template.name = getTextTable().getString("p_ad");
+                template.revisionId = getTextTable().getInt("rev_id");
+                if(template.revisionId ==12353069)
+                {
+                    String debug="canan burası debug için";
+                }
+                BirthPlaceExtractor bExtractor = new BirthPlaceExtractor();
+                template.Propetys.put("p_dogum_yer", bExtractor.Extract(template));
+                System.out.println(template.name + " doğum yer = " + template.Propetys.get("p_dogum_yer"));
+                sqlWriter.writeTemplate(template);
+
+            } catch (SQLException e1) {
+                e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            } catch (IOException e4) {
+                e4.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            } catch (Exception e5) {
+                e5.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                System.out.println("HATA!!!" + template.revisionId);
+            }
+        }
+        try {
+            sqlWriter.writeEndWiki();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("HATA!!! son commit" );
+        }
     }
 
+    public static ResultSet getTextTable() throws SQLException {
+        if (textTable == null) {
+            Statement statement = InfoBoxExtractor.baglanti.createStatement();
+            // TODO burayı incele
+            // Deneme amaçlı şimdilik 10 tane ile çalış
+            // Şimdilik sadece infobox olanlara bak
+            //textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id LIMIT 0,10");
+            textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id");
+        }
+        return textTable;
+    }
 
     private static void ConnectDB() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-       Class.forName("com.mysql.jdbc.Driver").newInstance();
-        baglanti= DriverManager.getConnection("jdbc:mysql://localhost/wikidb", "root", "root");
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        baglanti = DriverManager.getConnection("jdbc:mysql://localhost/wikidb", "root", "root");
+    }
+
+    protected void writeDB(Template template) {
+        try {
+            sqlWriter.writeTemplate(template);
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            System.out.println("HATA!!!" + template.revisionId);
+        }
+    }
+
+    private static SqlWriter15 openWriter() {
+        SqlServerStream sqlStream = new SqlServerStream(InfoBoxExtractor.baglanti);
+        return new SqlWriter15(new SqlWriter.MySQLTraits(), sqlStream, "");
     }
 
 

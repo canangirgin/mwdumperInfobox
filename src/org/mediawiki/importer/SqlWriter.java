@@ -172,7 +172,8 @@ public abstract class SqlWriter implements DumpWriter {
 	}
 	
 	private HashMap<String, StringBuffer> insertBuffers = new HashMap<String, StringBuffer>();
-	private static final int blockSize = 1024 * 512; // default 512k inserts
+	//private static final int blockSize = 0 * 0; // default 512k inserts
+    private static final int blockSize = 1024 * 512; // default 512k inserts
 	protected void bufferInsertRow(String table, Object[][] row) throws IOException {
 		StringBuffer sql = insertBuffers.get(table);
 		if (sql != null) {

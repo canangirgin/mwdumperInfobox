@@ -27,6 +27,8 @@
 
 package org.mediawiki.importer;
 
+import org.mediawiki.extractor.Template;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -137,6 +139,31 @@ public class SqlWriter15 extends SqlWriter {
        // checkpoint();
 		lastRevision = revision;
 	}
+
+    //Templateler yazılıyor:
+    public void writeTemplate(Template template) throws IOException {
+
+        if (template!=null)
+        {
+            Object[][] tempParam= new Object[template.Propetys.size()+1][1];
+            tempParam[0]= new Object[]{"rev_id", new Integer(template.revisionId)};
+            int i =1;
+            Set entries = template.Propetys.entrySet();
+            Iterator entriesIterator = entries.iterator();
+            while(entriesIterator.hasNext()){
+
+                Map.Entry mapping = (Map.Entry) entriesIterator.next();
+                tempParam[i]= new Object[]{mapping.getKey().toString(), ""+mapping.getValue()};
+                i++;
+            }
+
+            bufferInsertRow("template",tempParam);
+        }
+
+        //TODO Canan burası Deneme Silinecek
+         checkpoint();
+
+    }
     public static Object[][] getArrayFromHash(HashMap<Object,Object> data){
         Object[][] arr = new Object[data.size()][2];
         Set entries = data.entrySet();

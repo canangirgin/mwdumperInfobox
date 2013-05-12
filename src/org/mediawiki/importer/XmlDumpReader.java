@@ -418,7 +418,6 @@ public class XmlDumpReader  extends DefaultHandler {
         if (rev.InfoBox !=null && rev.InfoBox.Text !=null)
          {
             rev.InfoBox.TextToProperty();
-            rev.extractPattern();
          }
         }
 	}

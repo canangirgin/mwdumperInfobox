@@ -36,10 +36,9 @@ public class Revision {
 	public boolean Minor;
     //Canan
     public Infobox InfoBox;
-    public HashMap<String,String> Patterns;
 
 
-	
+
 	public boolean isRedirect() {
 		// FIXME
 		return Text.startsWith("#REDIRECT ") || Text.startsWith("#redirect ");
@@ -50,9 +49,9 @@ public class Revision {
 		Text = "";
         InfoBox = null;
    		Minor = false;
-        Patterns = new HashMap<String, String>();
-	}
 
+	}
+    /*
     public void extractPattern() {
         String p_ad=""+InfoBox.Propetys.get("p_ad");
         if (!p_ad.isEmpty() & !p_ad.equals("null"))
@@ -95,7 +94,7 @@ public class Revision {
                  if (keyIndex+20>Text.length())keyIndex=Text.length();else keyIndex=keyIndex +20;
                  return Text.substring(valueIndex,keyIndex);
                  }
-   }        */
+   }
         return null;
-}
+}    */
 }
