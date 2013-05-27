@@ -35,10 +35,6 @@ public class InfoBoxExtractor {
                 template.text = new String(bdata);
                 template.name = getTextTable().getString("p_ad");
                 template.revisionId = getTextTable().getInt("rev_id");
-                if(template.revisionId ==12353069)
-                {
-                    String debug="canan burası debug için";
-                }
                 BirthPlaceExtractor bExtractor = new BirthPlaceExtractor();
                 template.Propetys.put("p_dogum_yer", bExtractor.Extract(template));
                 System.out.println(template.name + " doğum yer = " + template.Propetys.get("p_dogum_yer"));
@@ -67,8 +63,9 @@ public class InfoBoxExtractor {
             // TODO burayı incele
             // Deneme amaçlı şimdilik 10 tane ile çalış
             // Şimdilik sadece infobox olanlara bak
-            //textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id LIMIT 0,10");
-            textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id");
+            textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id ");
+           // textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id LIMIT 0,10");
+            //textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id and rev_id='9086735'");
         }
         return textTable;
     }

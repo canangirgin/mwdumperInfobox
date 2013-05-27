@@ -259,27 +259,35 @@ public class BirthPlaceExtractor extends Extractor {
         }
 
     }
+
+
     private void getSplitter(String text, int tempStart, int tempIndex) {
-        // Noktalı virgul var ise ayıraç=; ,Virgul var ise ayıraç=, yok ise ayıraç=”)”
-
+        // Noktalı virgul var ise ayıraç=; ,Virgul var ise ayıraç=, ,- var ise ayıraç=- ,yok ise ayıraç=”)”
         String textTemp = text.substring(tempStart, text.indexOf(")", tempStart) + 1);
-        if (textTemp.contains(";")) {
-            splitter[tempIndex] = ";";
-            splitterIndex[tempIndex] = textTemp.indexOf(";", 0) + tempStart;
-        } else if (textTemp.contains(",")) {
-            splitter[tempIndex] = ",";
-            splitterIndex[tempIndex] = textTemp.indexOf(",", 0) + tempStart;
-        } else {
-            splitter[tempIndex] = ")";
-            splitterIndex[tempIndex] = textTemp.indexOf(")", 0) + tempStart;
-        }
 
+        int  tIndex = textTemp.indexOf(")", 0) + tempStart;
+        String tempSplitter = ")";
+        if (textTemp.indexOf(";", 0)!=-1 && textTemp.indexOf(";", 0) + tempStart < tIndex)
+        {
+         tIndex =textTemp.indexOf(";", 0) + tempStart;
+         tempSplitter = ";";
+        }
+        if (textTemp.indexOf("-", 0)!=-1 && textTemp.indexOf("-", 0) + tempStart < tIndex) {
+            tIndex = textTemp.indexOf("-", 0) + tempStart;
+            tempSplitter = "-";
+        }
+        if (textTemp.indexOf(",", 0)!=-1 && textTemp.indexOf(",", 0) + tempStart < tIndex) {
+            tIndex = textTemp.indexOf(",", 0) + tempStart;
+            tempSplitter = ",";
+        }
+        splitter[tempIndex] = tempSplitter;
+        splitterIndex[tempIndex] = tIndex;
     }
 
     private String getControlString(String text, int startIndex) {
         String controlNumber;
         controlNumber = text.substring(startIndex - 1, startIndex);
-        if (controlNumber.isEmpty() || controlNumber == "") {
+        if (controlNumber.isEmpty() || controlNumber.equals(" ")) {
             return getControlString(text, startIndex - 1);
         }
         return controlNumber;
