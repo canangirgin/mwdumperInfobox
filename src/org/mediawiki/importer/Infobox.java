@@ -14,7 +14,7 @@ public class Infobox {
     public String Text;
     public String Template;
     public HashMap<Object, Object> Propetys;
-
+    public int rev_id;
     public Infobox() {
         Text = "";
         Template = "";
@@ -23,10 +23,8 @@ public class Infobox {
         {
             Propetys.put(bulunacak.dbKey,null);
         }
-
-        //   {"infobox",revision.InfoBox.Text},
-        // {"infobox_template",revision.InfoBox.Template}};
     }
+
     public void TextToProperty() {
 
         int indexStartValue = 0;
@@ -73,8 +71,8 @@ public class Infobox {
                     if (splitValue.length >=Integer.parseInt(bulunacakValueProp[2]))
                     {
                         value= getClearText(splitValueRow[Integer.parseInt(bulunacakValueProp[2])-1]);
-                        Propetys.put(bulunacakDb.dbKey, value);
-                        return;
+                        Propetys.put(bulunacakDb.dbKey, Propetys.get(bulunacakDb.dbKey) + "," + value);
+                        continue;
                     }
                 }
               }
@@ -96,11 +94,58 @@ public class Infobox {
         {
             text=text.substring(0,text.indexOf("{{bayraksimge"))+text.substring(text.indexOf("}}",text.indexOf("{{bayraksimge"))+2);
         }
+        if (text.contains("tarihi"))
+        {
+        text=text.substring(text.indexOf("|",text.indexOf("tarihi"))+1);
+            String[] tar= text.split("\\|");
+            text= tar[0] + ","+ tar[1] + ","+ tar[2];
+
+        }
+        if (text.contains("(il)"))
+        {
+        text=text.substring(0,text.indexOf("(il)"));
+        }
+        if (text.contains("dosya:flag of"))
+        {
+            text= text.substring(0,text.indexOf("dosya:flag of"))+ text.substring(text.indexOf("px",text.indexOf(".svg"))+2);
+        }
+
+        text = removeRef(text);
+
+        text=text.replace("(eyalet)","");
+        text=text.replace("(şehir)","");
+        text=text.replace("(birleşik krallık)","");
+
+        text= text.replace("(ada)","");
+        text= text.replace("(bugünkü","(");
+        text= text.replace("(günümüzde","(");
+        text=  text.replace("(bugün","(");
+        text=  text.replace("(günümüz","(");
+        text=  text.replace("yakınında","");
+        text=  text.replace("yakınları","");
+
         text=text.replace("[[","");
         text=text.replace("]]","");
-
+        text=text.replace("}","");
+        text=text.replace("{","");
+        text=text.replace("''","");
+        text=text.trim();
         return text;
     }
+
+    private String removeRef(String text) {
+        if (text.contains("<ref"))
+        {
+            int refEnd=  text.indexOf("</",text.indexOf("<ref"));
+            if (refEnd == -1)
+                refEnd= text.indexOf("/>",text.indexOf("<ref"));
+            text= text.substring(0,text.indexOf("<ref"))+ text.substring(text.indexOf('>',refEnd)+1);
+            text=removeRef(text);
+        }
+        return text;
+
+    }
 }
+
 
 

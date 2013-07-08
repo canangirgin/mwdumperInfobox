@@ -164,6 +164,30 @@ public class SqlWriter15 extends SqlWriter {
          checkpoint();
 
     }
+    //Infobox extract update
+    public void updateInfoboxAnalyse(Infobox infobox) throws IOException {
+
+        if (infobox!=null)
+        {
+            Object[][] infoParam= new Object[infobox.Propetys.size()+1][1];
+            infoParam[0]= new Object[]{"rev_id", new Integer(infobox.rev_id)};
+            int i =1;
+            Set entries = infobox.Propetys.entrySet();
+            Iterator entriesIterator = entries.iterator();
+            while(entriesIterator.hasNext()){
+
+                Map.Entry mapping = (Map.Entry) entriesIterator.next();
+                infoParam[i]= new Object[]{mapping.getKey().toString(), ""+mapping.getValue()};
+                i++;
+            }
+
+            bufferInsertRow("infobox_analyse",infoParam);
+        }
+
+        checkpoint();
+
+    }
+
     public static Object[][] getArrayFromHash(HashMap<Object,Object> data){
         Object[][] arr = new Object[data.size()][2];
         Set entries = data.entrySet();
