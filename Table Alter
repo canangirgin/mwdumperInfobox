@@ -1,9 +1,29 @@
 
 
+delimiter $$
+
 CREATE TABLE `infobox` (
   `rev_id` int(11) NOT NULL DEFAULT '0',
-  `infobox` varchar(4000) COLLATE utf8_unicode_ci NOT NULL,
+  `infobox` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
   `infobox_template` varchar(4000) COLLATE utf8_unicode_ci NOT NULL,
+  `p_ad` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_olum_yer` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_dogum_yer` varchar(5000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_olum_tar` varchar(400) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_dogum_tar` varchar(400) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`rev_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci$$
+
+
+delimiter $$
+
+CREATE TABLE `infobox_analyse` (
+  `rev_id` int(11) NOT NULL DEFAULT '0',
+  `p_ad` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_olum_yer` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_dogum_yer` varchar(5000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_olum_tar` varchar(400) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_dogum_tar` varchar(400) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`rev_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci$$
 
@@ -25,6 +45,7 @@ CREATE TABLE `page` (
   PRIMARY KEY (`page_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=binary$$
 
+
 delimiter $$
 
 CREATE TABLE `revision` (
@@ -42,12 +63,42 @@ CREATE TABLE `revision` (
   PRIMARY KEY (`rev_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=28201307 DEFAULT CHARSET=binary MAX_ROWS=10000000 AVG_ROW_LENGTH=1024$$
 
-        delimiter $$
 
-        CREATE TABLE `text` (
-          `old_id` int(11) NOT NULL,
-          `old_text` longblob NOT NULL,
-          `old_flags` blob NOT NULL,
-          PRIMARY KEY (`old_id`)
-        ) ENGINE=InnoDB DEFAULT CHARSET=binary$$
+delimiter $$
+
+CREATE TABLE `template` (
+  `rev_id` int(11) NOT NULL,
+  `p_ad` varchar(4000) DEFAULT NULL,
+  `p_meslek` varchar(4000) DEFAULT NULL,
+  `p_dogum_yer` varchar(5000) DEFAULT NULL,
+  `p_dogum_ulke` varchar(4000) DEFAULT NULL,
+  `p_dogum_tar` varchar(4000) DEFAULT NULL,
+  PRIMARY KEY (`rev_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8$$
+
+
+delimiter $$
+
+CREATE TABLE `text` (
+  `old_id` int(11) NOT NULL,
+  `old_text` longblob NOT NULL,
+  `old_flags` blob NOT NULL,
+  PRIMARY KEY (`old_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=binary$$
+
+
+delimiter $$
+
+CREATE TABLE `yedekinfobox` (
+  `rev_id` int(11) NOT NULL DEFAULT '0',
+  `infobox` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `infobox_template` varchar(4000) COLLATE utf8_unicode_ci NOT NULL,
+  `p_ad` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_olum_yer` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_dogum_yer` varchar(5000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_dogum_ulke` varchar(400) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_dogum_tar` varchar(400) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`rev_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci$$
+
 
