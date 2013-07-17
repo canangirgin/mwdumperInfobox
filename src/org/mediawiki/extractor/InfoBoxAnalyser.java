@@ -14,6 +14,8 @@ import java.sql.*;
  * Time: 15:10
  * To change this template use File | Settings | File Templates.
  */
+
+//İnfoboxları analiz edip, temizleyip içerisinden istenilen propertyleri çıkartıyor.
 public class InfoBoxAnalyser {
     private static ResultSet textTable = null;
     public static Connection connection = null;

@@ -9,14 +9,7 @@ import java.sql.SQLException;
  * Time: 03:25
  * To change this template use File | Settings | File Templates.
  */
-public abstract class Extractor {
+public interface  IExtractor {
 
-
-
-    abstract String Extract(Template template) throws SQLException;
-
-
-
-
-
+    String Extract(Template template) throws SQLException;
 }

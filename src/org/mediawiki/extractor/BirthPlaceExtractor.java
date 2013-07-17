@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * Time: 03:26
  * To change this template use File | Settings | File Templates.
  */
-public class BirthPlaceExtractor extends Extractor {
+public class BirthPlaceExtractor implements IExtractor {
     public String numbers = "0123456789";
     String[] splitter = new String[2];
     int[] splitterIndex = new int[2];
@@ -18,6 +18,7 @@ public class BirthPlaceExtractor extends Extractor {
     String[] locations= new String[]{"köy","ilçe","şehri","ilinin","kent"};
      //TODO bu locations bölumn atlama. Burası yapılacak
     //TODO Bulduğun şey sayımı kontrolunu yap
+
     @Override
     public String Extract(Template template) throws SQLException {
         String birthPlace = null;
@@ -305,6 +306,8 @@ public class BirthPlaceExtractor extends Extractor {
         }
         return birthPlaceTemp;
     }
+
+
     /*
     Patternler:
 

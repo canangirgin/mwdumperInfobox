@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24102694-944a-48a8-bac7-3232ace09138" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/mediawiki/extractor/CRFTrainer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxEngine.java" />
+      <change type="MOVED" beforePath="C:\Users\hs\repo\mwdumper\src\org\mediawiki\extractor\Extractor.java" afterPath="$PROJECT_DIR$/src/org/mediawiki/extractor/IExtractor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java" afterPath="$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxAnalyser.java" afterPath="$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxAnalyser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxConst.java" afterPath="$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxConst.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mediawiki/extractor/Infobox.java" afterPath="$PROJECT_DIR$/src/org/mediawiki/extractor/Infobox.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" afterPath="$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mediawiki/extractor/Template.java" afterPath="$PROJECT_DIR$/src/org/mediawiki/extractor/Template.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yapılacaklar.docx" afterPath="$PROJECT_DIR$/Yapılacaklar.docx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mwdumper.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/SqlWriter15.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1373286723021" ignored="false" />
-    <file path="/Dummy.txt" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1374049411717" ignored="false" />
+    <file path="/Dummy.txt" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1374060164391" ignored="false" />
     <file path="/Revision.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1366245882143" ignored="false" />
     <file path="/XmlDumpReader.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1373281654038" ignored="false" />
     <file path="/InfoBoxFilter.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1363004669784" ignored="false" />
@@ -27,11 +31,12 @@
     <file path="/InfoBoxConst.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1373285186294" ignored="false" />
     <file path="/keyValue.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1366139014239" ignored="false" />
     <file path="/WikiPattern.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1366238642043" ignored="false" />
-    <file path="/InfoBoxExtractor.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1368397850997" ignored="false" />
-    <file path="/Extractor.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1368394036605" ignored="false" />
-    <file path="/BirthPlaceExtractor.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1368425724180" ignored="false" />
-    <file path="/Template.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1368394622539" ignored="false" />
-    <file path="/InfoBoxAnalyser.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1373288112752" ignored="false" />
+    <file path="/InfoBoxExtractor.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1374066203680" ignored="false" />
+    <file path="/Extractor.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1374065022433" ignored="false" />
+    <file path="/BirthPlaceExtractor.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1374067308420" ignored="false" />
+    <file path="/Template.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1374064845338" ignored="false" />
+    <file path="/InfoBoxAnalyser.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1374064826152" ignored="false" />
+    <file path="/CRFTrainer.java" changelist="24102694-944a-48a8-bac7-3232ace09138" time="1374067517962" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +164,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/Extractor.java" line="21" class="org.mediawiki.extractor.Extractor" package="org.mediawiki.extractor">
+      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/IExtractor.java" line="13" class="org.mediawiki.extractor.IExtractor" package="org.mediawiki.extractor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -173,7 +178,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" line="54" class="org.mediawiki.extractor.InfoBoxExtractor" package="org.mediawiki.extractor">
+      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" line="57" class="org.mediawiki.extractor.InfoBoxExtractor" package="org.mediawiki.extractor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -187,7 +192,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" line="43" class="org.mediawiki.extractor.InfoBoxExtractor" package="org.mediawiki.extractor">
+      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" line="46" class="org.mediawiki.extractor.InfoBoxExtractor" package="org.mediawiki.extractor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -201,7 +206,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" line="45" class="org.mediawiki.extractor.InfoBoxExtractor" package="org.mediawiki.extractor">
+      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" line="48" class="org.mediawiki.extractor.InfoBoxExtractor" package="org.mediawiki.extractor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -215,7 +220,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java" line="53" class="org.mediawiki.extractor.BirthPlaceExtractor" package="org.mediawiki.extractor">
+      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java" line="54" class="org.mediawiki.extractor.BirthPlaceExtractor" package="org.mediawiki.extractor">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java" line="63" class="org.mediawiki.extractor.BirthPlaceExtractor" package="org.mediawiki.extractor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -243,7 +262,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java" line="61" class="org.mediawiki.extractor.BirthPlaceExtractor" package="org.mediawiki.extractor">
+      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java" line="289" class="org.mediawiki.extractor.BirthPlaceExtractor" package="org.mediawiki.extractor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -257,21 +276,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java" line="288" class="org.mediawiki.extractor.BirthPlaceExtractor" package="org.mediawiki.extractor">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" line="73" class="org.mediawiki.extractor.InfoBoxExtractor" package="org.mediawiki.extractor">
+      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" line="76" class="org.mediawiki.extractor.InfoBoxExtractor" package="org.mediawiki.extractor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -355,6 +360,34 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/CRFTrainer.java" line="28" class="org.mediawiki.extractor.CRFTrainer" package="org.mediawiki.extractor">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/org/mediawiki/extractor/CRFTrainer.java" line="36" class="org.mediawiki.extractor.CRFTrainer" package="org.mediawiki.extractor">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
@@ -400,37 +433,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SqlWriter15.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="184" column="55" selection-start="6797" selection-end="6797" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="InfoBoxExtractor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="7" selection-start="3960" selection-end="3960" vertical-scroll-proportion="0.0">
+            <state line="40" column="62" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InfoBoxAnalyser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxAnalyser.java">
+      <file leaf-file-name="BirthPlaceExtractor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="12" selection-start="2471" selection-end="2474" vertical-scroll-proportion="0.0">
+            <state line="21" column="6" selection-start="623" selection-end="623" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Infobox.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/Infobox.java">
+      <file leaf-file-name="Template.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/Template.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="32" selection-start="3927" selection-end="3927" vertical-scroll-proportion="0.6319703">
+            <state line="18" column="36" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CRFTrainer.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/CRFTrainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="8" selection-start="2043" selection-end="2055" vertical-scroll-proportion="0.3809524">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -438,10 +471,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Table Alter" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Table Alter">
+      <file leaf-file-name="Infobox.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/Infobox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="62" selection-start="3104" selection-end="3104" vertical-scroll-proportion="0.0">
+            <state line="18" column="21" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Revision.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/Revision.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="21" selection-start="1407" selection-end="1411" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SphinxWriter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SphinxWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="40" selection-start="2610" selection-end="2610" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SqlWriter15.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="67" selection-start="2537" selection-end="2537" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -450,34 +514,16 @@
       <file leaf-file-name="XmlDumpReader.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="375" column="32" selection-start="11023" selection-end="11023" vertical-scroll-proportion="0.0">
+            <state line="390" column="29" selection-start="11676" selection-end="11676" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InfoBoxConst.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxConst.java">
+      <file leaf-file-name="IExtractor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/IExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="49" selection-start="868" selection-end="868" vertical-scroll-proportion="-3.2">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SqlWriter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="356" column="0" selection-start="10564" selection-end="10564" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SqlServerStream.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlServerStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="39" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
+            <state line="11" column="30" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -502,22 +548,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/org/mediawiki/importer/Template.java" />
-        <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/src/org/mediawiki/importer/Revision.java" />
-        <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/Template.java" />
-        <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/Extractor.java" />
         <option value="$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter.java" />
-        <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java" />
         <option value="$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java" />
         <option value="$PROJECT_DIR$/src/org/mediawiki/importer/InfoBoxConst.java" />
-        <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" />
         <option value="$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java" />
         <option value="$PROJECT_DIR$/src/org/mediawiki/importer/Infobox.java" />
         <option value="$PROJECT_DIR$/Table Alter" />
         <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxConst.java" />
         <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxAnalyser.java" />
+        <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/Template.java" />
+        <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/Trainer.java" />
+        <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/Extractor.java" />
+        <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java" />
+        <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java" />
+        <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/IExtractor.java" />
         <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/Infobox.java" />
+        <option value="$PROJECT_DIR$/src/org/mediawiki/extractor/CRFTrainer.java" />
       </list>
     </option>
   </component>
@@ -574,6 +620,132 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mwdumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mwdumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mediawiki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="importer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mwdumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mwdumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mediawiki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extractor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mwdumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mwdumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mediawiki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mwdumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mwdumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mediawiki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mwdumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mwdumper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -608,23 +780,7 @@
       <recent name="org.mediawiki.importer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.InfoBoxAnalyser">
-    <configuration default="false" name="Dumper" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="org.mediawiki.dumper.Dumper" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="mwdumper" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.CRFTrainer">
     <configuration default="false" name="DumperGui" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="org.mediawiki.dumper.gui.DumperGui" />
       <option name="VM_PARAMETERS" />
@@ -687,6 +843,28 @@
     </configuration>
     <configuration default="false" name="InfoBoxAnalyser" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="org.mediawiki.extractor.InfoBoxAnalyser" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="mwdumper" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CRFTrainer" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="org.mediawiki.extractor.CRFTrainer" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -784,19 +962,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Dumper" />
-      <item index="1" class="java.lang.String" itemvalue="Application.DumperGui" />
-      <item index="2" class="java.lang.String" itemvalue="Application.DumperWindow" />
-      <item index="3" class="java.lang.String" itemvalue="Application.InfoBoxExtractor" />
-      <item index="4" class="java.lang.String" itemvalue="Application.InfoBoxAnalyser" />
+      <item index="0" class="java.lang.String" itemvalue="Application.DumperGui" />
+      <item index="1" class="java.lang.String" itemvalue="Application.DumperWindow" />
+      <item index="2" class="java.lang.String" itemvalue="Application.InfoBoxExtractor" />
+      <item index="3" class="java.lang.String" itemvalue="Application.InfoBoxAnalyser" />
+      <item index="4" class="java.lang.String" itemvalue="Application.CRFTrainer" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.InfoBoxAnalyser" />
-        <item index="1" class="java.lang.String" itemvalue="Application.InfoBoxExtractor" />
-        <item index="2" class="java.lang.String" itemvalue="Application.DumperGui" />
-        <item index="3" class="java.lang.String" itemvalue="Application.DumperWindow" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Dumper" />
+        <item index="0" class="java.lang.String" itemvalue="Application.CRFTrainer" />
+        <item index="1" class="java.lang.String" itemvalue="Application.InfoBoxAnalyser" />
+        <item index="2" class="java.lang.String" itemvalue="Application.InfoBoxExtractor" />
+        <item index="3" class="java.lang.String" itemvalue="Application.DumperGui" />
+        <item index="4" class="java.lang.String" itemvalue="Application.DumperWindow" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
@@ -842,24 +1020,24 @@
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14910859" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35656402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38330632" sideWeight="0.74554294" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2082658" sideWeight="0.4700162" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20664506" sideWeight="0.57374394" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50567263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4262561" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25283632" sideWeight="0.7163695" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28363046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -903,7 +1081,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="17.07.2013 analiz edilen alanlarda veri temizleme yapıldı." />
+    <option name="LAST_COMMIT_MESSAGE" value="17.07.2013 tarih alanlarında duzenlemeler yapıldı." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -924,92 +1102,15 @@
     <MESSAGE value="CRF araştırmaları" />
     <MESSAGE value="08.07.2013 tum alanlar infodan analiz edildi." />
     <MESSAGE value="17.07.2013 analiz edilen alanlarda veri temizleme yapıldı." />
+    <MESSAGE value="17.07.2013 tarih alanlarında duzenlemeler yapıldı." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/dumper/Dumper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="244" column="37" selection-start="7700" selection-end="7700" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.6.0_37/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="685" column="0" selection-start="24787" selection-end="24787" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#115569#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/3.1.11/mysql-connector-java-3.1.11.jar!/com/mysql/jdbc/ResultSet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="519" column="19" selection-start="28793" selection-end="28793" vertical-scroll-proportion="0.67663044" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="300" column="4" selection-start="10455" selection-end="10455" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/Revision.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="13" selection-start="1239" selection-end="1239" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/dumper/gui/DumperWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="31" selection-start="1484" selection-end="1484" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="375" column="32" selection-start="11023" selection-end="11023" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="55" selection-start="6797" selection-end="6797" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="356" column="0" selection-start="10564" selection-end="10564" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlServerStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="39" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Yapılacaklar.docx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="19" selection-start="4121" selection-end="4121" vertical-scroll-proportion="0.68653846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="7" selection-start="3960" selection-end="3960" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1030,14 +1131,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxAnalyser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="12" selection-start="2471" selection-end="2474" vertical-scroll-proportion="0.0">
+        <state line="19" column="46" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/dumper/gui/DumperWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="26" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/XmlDumpReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="390" column="29" selection-start="11676" selection-end="11676" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/Revision.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="21" selection-start="1407" selection-end="1411" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SphinxWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="40" selection-start="2610" selection-end="2610" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/importer/SqlWriter15.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="67" selection-start="2537" selection-end="2537" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/Template.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="36" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/BirthPlaceExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="6" selection-start="623" selection-end="623" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/IExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="30" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/Infobox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="32" selection-start="3927" selection-end="3927" vertical-scroll-proportion="0.6319703">
+        <state line="18" column="21" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/InfoBoxExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="62" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/mediawiki/extractor/CRFTrainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="8" selection-start="2043" selection-end="2055" vertical-scroll-proportion="0.3809524">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -14,6 +14,9 @@ import java.sql.*;
  * Time: 03:20
  * To change this template use File | Settings | File Templates.
  */
+
+//BUrası şu an fazla CRF olmadan çıkartmaya çalışıyordu!!!
+//Metinlerden infoboxları çıkartıyor!!!!
 public class InfoBoxExtractor {
     private static ResultSet textTable = null;
     public static Blob textBlob = null;
@@ -88,6 +91,5 @@ public class InfoBoxExtractor {
         SqlServerStream sqlStream = new SqlServerStream(InfoBoxExtractor.baglanti);
         return new SqlWriter15(new SqlWriter.MySQLTraits(), sqlStream, "");
     }
-
 
 }
