@@ -31,6 +31,9 @@ public class InfoBoxAnalyser {
                 infobox.rev_id = getTextTable().getInt("rev_id");
                 infobox.TextToProperty();
                 System.out.println( " doğum yer = " + infobox.Propetys.get("p_dogum_yer"));
+                System.out.println( " doğum tar = " + infobox.Propetys.get("p_dogum_tar"));
+                System.out.println( " olum yer = " + infobox.Propetys.get("p_olum_yer"));
+                System.out.println( " olum tar = " + infobox.Propetys.get("p_olum_tar"));
                 writeDB(infobox);
 
             } catch (SQLException e1) {
@@ -55,8 +58,8 @@ public class InfoBoxAnalyser {
             // TODO burayı incele
             // Deneme amaçlı şimdilik 10 tane ile çalış
             // Şimdilik sadece infobox olanlara bak
-            textTable = statement.executeQuery("select rev_id,infobox from infobox");
-            // textTable = statement.executeQuery("select rev_id,infobox from infobox where rev_id='12630466'");
+             textTable = statement.executeQuery("select rev_id,infobox from infobox");
+            //  textTable = statement.executeQuery("select rev_id,infobox from infobox where rev_id='12741133'");
         }
         return textTable;
     }

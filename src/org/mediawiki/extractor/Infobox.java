@@ -23,7 +23,7 @@ public class Infobox {
         Propetys = new HashMap<Object, Object>();
         for(KeyValue bulunacak:InfoBoxConst.PropetyBulunacak)
         {
-            Propetys.put(bulunacak.dbKey,null);
+            Propetys.put(bulunacak.dbKey,"");
         }
     }
 
@@ -36,7 +36,7 @@ public class Infobox {
              if (!property.isEmpty()) {
                 try {
                     String key = property.substring(0, property.indexOf("=")).trim();
-                    String value = "";
+                    String value = null;
                     indexStartValue = property.indexOf("=");
                     if (indexStartValue > 0) {
                         value = property.substring(indexStartValue + 1).trim().replace("[", "").replace("]", "");
@@ -69,11 +69,17 @@ public class Infobox {
                      splitValue=value.split("<br />");}
                 if (splitValue.length >=Integer.parseInt(bulunacakValueProp[1]))
                 {
-                    String[] splitValueRow= splitValue[Integer.parseInt(bulunacakValueProp[1])-1].split(",");
-                    if (splitValue.length >=Integer.parseInt(bulunacakValueProp[2]))
+                     String newValue;
+                    if (bulunacakValueProp.length>2 && splitValue.length >=Integer.parseInt(bulunacakValueProp[2]))
                     {
-                        value= getClearText(splitValueRow[Integer.parseInt(bulunacakValueProp[2])-1]);
-                        Propetys.put(bulunacakDb.dbKey, Propetys.get(bulunacakDb.dbKey) + "," + value);
+                        String[] splitValueRow= splitValue[Integer.parseInt(bulunacakValueProp[1])-1].split(",");
+                        newValue= getClearText(splitValueRow[Integer.parseInt(bulunacakValueProp[2])-1]);
+                        PutValue(newValue, bulunacakDb);
+                        continue;
+                    } else
+                    {
+                        newValue= getClearText(splitValue[Integer.parseInt(bulunacakValueProp[1])-1]);
+                        PutValue(newValue, bulunacakDb);
                         continue;
                     }
                 }
@@ -83,33 +89,61 @@ public class Infobox {
             if (key.trim().startsWith(bulunacakValue.toLowerCase()))
             {
                 value=  getClearText(value);
-                if (!value.isEmpty() && !value.equals("") && !value.equals(null))
-                {
-                if ( Propetys.get(bulunacakDb.dbKey)!= null)
-                {
-                    value=Propetys.get(bulunacakDb.dbKey)+ "," +value;
-                }
-                Propetys.put(bulunacakDb.dbKey,value);
-                }
+                PutValue(value, bulunacakDb);
                 return;
             }
         }
         }
     }
 
+    private void PutValue(String value, KeyValue bulunacakDb) {
+        if (!value.isEmpty() && !value.equals("") && !value.equals(null))
+        {
+        if (!Propetys.get(bulunacakDb.dbKey).equals(""))
+        {
+            value=Propetys.get(bulunacakDb.dbKey)+ "," +value;
+        }
+        Propetys.put(bulunacakDb.dbKey,value);
+        }
+    }
+
     //Veri temizleme işlemleri
     private String getClearText(String text) {
+        text=text.replace("yıl,ay,gün","");
+        text.replace("bilinmiyor","");
+        if (text.contains("<!--"))
+       {
+           text= text.substring(0,text.indexOf("<!--")) +text.substring(text.indexOf("-->",text.indexOf("<!--"))+3);
+       }
         if(text.contains("{{bayraksimge"))
         {
             text=text.substring(0,text.indexOf("{{bayraksimge"))+text.substring(text.indexOf("}}",text.indexOf("{{bayraksimge"))+2);
         }
         if (text.contains("tarihi"))
         {
-        text=text.substring(text.indexOf("|",text.indexOf("tarihi"))+1);
+            text=text.replace("df=evet|","");
+            text=text.replace("df=yes|","");
+            text=text.replace("mf=yes|","");
+            text=text.substring(text.indexOf("|",text.indexOf("tarihi"))+1,text.indexOf("}}"));
             String[] tar= text.split("\\|");
             text= tar[0] + ","+ tar[1] + ","+ tar[2];
 
         }
+        if (text.contains("date"))
+        {
+            text=text.replace("df=evet|","");
+            text=text.replace("df=yes|","");
+            text=text.replace("mf=yes|","");
+            text=text.substring(text.indexOf("|",text.indexOf("date"))+1,text.indexOf("}}"));
+            String[] tar= text.split("\\|");
+            text= tar[0] + ","+ tar[1] + ","+ tar[2];
+
+        }
+        if (text.contains("yaşında"))
+        {
+            text=text.substring(0,text.substring(0,text.indexOf("yaşında")).lastIndexOf("("));
+        }
+
         if (text.contains("(il)"))
         {
         text=text.substring(0,text.indexOf("(il)"));
@@ -132,12 +166,14 @@ public class Infobox {
         text= text.replace("şimdiki","");
         text=  text.replace("(bugün","(");
         text=  text.replace("(günümüz","(");
+        text=  text.replace("yaklaşık","");
         text=  text.replace("yakınında","");
         text=  text.replace("yakınlarında","");
         text=  text.replace("veya",",");
         text=  text.replace("yakınları","");
         text= text.replace("<small>","");
         text= text.replace("</small>","");
+        text=  text.replace("yak.","");
         text= text.replace("<br/>",",");
         text= text.replace("<br />",",");
         text= text.replace("</br>",",");
