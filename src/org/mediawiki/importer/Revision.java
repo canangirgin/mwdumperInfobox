@@ -25,6 +25,8 @@
 
 package org.mediawiki.importer;
 
+import org.mediawiki.extractor.Infobox;
+
 import java.util.*;
 
 public class Revision {

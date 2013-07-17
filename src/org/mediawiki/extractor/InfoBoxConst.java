@@ -1,4 +1,6 @@
-package org.mediawiki.importer;
+package org.mediawiki.extractor;
+
+import org.mediawiki.importer.KeyValue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,8 +20,8 @@ public class InfoBoxConst {
         //PropetyBulunacak.add(new KeyValue("p_meslek", Arrays.asList("mesle")));
         PropetyBulunacak.add(new KeyValue("p_dogum_yer", Arrays.asList("doğum_yer","doğduğuşehir","doğumyeri","doğum yeri","doğum yer","doğum_yeri","birth place","birthplace","birth_place","yer","doğum/2/1","doğduğuülke")));
         PropetyBulunacak.add(new KeyValue("p_olum_yer", Arrays.asList("ölümyeri","ölüm_yeri","ölüm yeri","death_place","deathplace","death place","ölüm/2/1")));
-        PropetyBulunacak.add(new KeyValue("p_olum_tar", Arrays.asList("ölümtarihi","ölüm_tarihi","ölüm tarihi","death_date","death date","deathdate","ölüm tarihi ve yaşı","ölüm yılı ve yaşı","ölüm/1")));
-        PropetyBulunacak.add(new KeyValue("p_dogum_tar", Arrays.asList("doğumtarih","doğumtarihi","doğum_tarih","doğum tarihi","doğum tarih","birth_date","birthdate","birth date","born","doğum tarihi ve yaşı","doğum yılı ve yaşı","doğum/1")));
+        PropetyBulunacak.add(new KeyValue("p_olum_tar", Arrays.asList("ölümtarih","ölüm tarih","ölümtarihi","ölüm_tarihi","ölüm tarihi","death_date","death date","deathdate","ölüm tarihi ve yaşı","ölüm yılı ve yaşı","ölüm/1")));
+        PropetyBulunacak.add(new KeyValue("p_dogum_tar", Arrays.asList("doğumtarih","doğumtarihi","doğum_tarih","doğum tarihi","doğum tarih","doğum_tarihi","birth_date","birthdate","birth date","born","doğum tarihi ve yaşı","doğum yılı ve yaşı","doğum/1")));
     }
     public static List<String> infoboxFilter =  Arrays.asList("Asker bilgi kutusu", "Astronot bilgi kutusu", "Basketbolcu bilgi kutusu",
             "Beyzbolcu bilgi kutusu",

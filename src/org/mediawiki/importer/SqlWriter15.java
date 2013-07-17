@@ -27,6 +27,7 @@
 
 package org.mediawiki.importer;
 
+import org.mediawiki.extractor.Infobox;
 import org.mediawiki.extractor.Template;
 
 import java.io.IOException;

@@ -1,4 +1,6 @@
-package org.mediawiki.importer;
+package org.mediawiki.extractor;
+
+import org.mediawiki.importer.KeyValue;
 
 import java.util.HashMap;
 
@@ -81,7 +83,14 @@ public class Infobox {
             if (key.trim().startsWith(bulunacakValue.toLowerCase()))
             {
                 value=  getClearText(value);
-               Propetys.put(bulunacakDb.dbKey,value);
+                if (!value.isEmpty() && !value.equals("") && !value.equals(null))
+                {
+                if ( Propetys.get(bulunacakDb.dbKey)!= null)
+                {
+                    value=Propetys.get(bulunacakDb.dbKey)+ "," +value;
+                }
+                Propetys.put(bulunacakDb.dbKey,value);
+                }
                 return;
             }
         }
@@ -118,18 +127,33 @@ public class Infobox {
 
         text= text.replace("(ada)","");
         text= text.replace("(bugünkü","(");
+        text= text.replace("(bugün","(");
         text= text.replace("(günümüzde","(");
+        text= text.replace("şimdiki","");
         text=  text.replace("(bugün","(");
         text=  text.replace("(günümüz","(");
         text=  text.replace("yakınında","");
+        text=  text.replace("yakınlarında","");
+        text=  text.replace("veya",",");
         text=  text.replace("yakınları","");
-
+        text= text.replace("<small>","");
+        text= text.replace("</small>","");
+        text= text.replace("<br/>",",");
+        text= text.replace("<br />",",");
+        text= text.replace("</br>",",");
+        text= text.replace("null","");
         text=text.replace("[[","");
         text=text.replace("]]","");
         text=text.replace("}","");
+        text=text.replace("\"","");
         text=text.replace("{","");
         text=text.replace("''","");
+        text=text.replace("|",",");
+        text= text.replace("(",",");
+        text= text.replace(")",",");
+        text= text.replace("/",",");
         text=text.trim();
+
         return text;
     }
 

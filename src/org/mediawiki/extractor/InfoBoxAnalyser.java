@@ -1,6 +1,5 @@
 package org.mediawiki.extractor;
 
-import org.mediawiki.importer.Infobox;
 import org.mediawiki.importer.SqlServerStream;
 import org.mediawiki.importer.SqlWriter;
 import org.mediawiki.importer.SqlWriter15;
@@ -57,8 +56,7 @@ public class InfoBoxAnalyser {
             // Deneme amaçlı şimdilik 10 tane ile çalış
             // Şimdilik sadece infobox olanlara bak
             textTable = statement.executeQuery("select rev_id,infobox from infobox");
-            // textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id LIMIT 0,10");
-            //textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id and rev_id='9086735'");
+            // textTable = statement.executeQuery("select rev_id,infobox from infobox where rev_id='12630466'");
         }
         return textTable;
     }

@@ -1,6 +1,5 @@
 package org.mediawiki.extractor;
 
-import org.mediawiki.importer.InfoBoxConst;
 import org.mediawiki.importer.KeyValue;
 
 import java.util.HashMap;

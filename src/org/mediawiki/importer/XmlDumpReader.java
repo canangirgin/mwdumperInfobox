@@ -25,6 +25,8 @@
 
 package org.mediawiki.importer;
 
+import org.mediawiki.extractor.InfoBoxConst;
+import org.mediawiki.extractor.Infobox;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -372,7 +374,7 @@ public class XmlDumpReader  extends DefaultHandler {
 	}
 
     private void readInfoBox() {
-            for (String filter :InfoBoxConst.infoboxFilter)
+            for (String filter : InfoBoxConst.infoboxFilter)
             {
                 int infoBoxStart = rev.Text.indexOf("{{"+filter);
                 if (infoBoxStart>0)
