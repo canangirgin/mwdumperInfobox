@@ -1,0 +1,4 @@
+Canan buyuk ilk isim
+armut gucuk false meyve
+yedi gucuk sisaret fill
+. gucuk isaret sbosluk nokta
