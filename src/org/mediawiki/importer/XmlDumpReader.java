@@ -389,6 +389,7 @@ public class XmlDumpReader  extends DefaultHandler {
                        findInfoBox(infoBoxStart);
                        rev.InfoBox.Template= rev.Text.substring(infoBoxStart+2, rev.Text.indexOf("\n",infoBoxStart)).toLowerCase();
                        rev.Text=rev.Text.replace(rev.InfoBox.Text,"").replace("[","").replace("]","");
+
                    }catch(Exception ex)
                    {
                        //TODO CANAN burayı incele
