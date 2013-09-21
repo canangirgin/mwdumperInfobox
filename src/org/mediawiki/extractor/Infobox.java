@@ -39,7 +39,7 @@ public class Infobox {
                     String value = null;
                     indexStartValue = property.indexOf("=");
                     if (indexStartValue > 0) {
-                        value = property.substring(indexStartValue + 1).trim().replace("[", "").replace("]", "");
+                        value = property.substring(indexStartValue + 1).trim().replace("[", "").replace("]", "").toLowerCase();
                     }
                    extractProperty(key, value);
                    System.out.println(key + "=" + value);
@@ -50,7 +50,8 @@ public class Infobox {
     }
 
     private void extractProperty(String key, String value) {
-       //TODO bayrak simgelerini silmek lazım
+        value=value.toLowerCase();
+        key=key.toLowerCase();
         for (KeyValue bulunacakDb: InfoBoxConst.PropetyBulunacak)
         {
         for (String bulunacakValue:bulunacakDb.values)

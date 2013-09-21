@@ -384,11 +384,12 @@ public class XmlDumpReader  extends DefaultHandler {
                     String dur="";
                 }
                    try{
-                       rev.Text= rev.Text.toLowerCase();
+                      // rev.Text= rev.Text.toLowerCase();
                        rev.InfoBox= new Infobox();
                        findInfoBox(infoBoxStart);
-                       rev.InfoBox.Template= rev.Text.substring(infoBoxStart+2, rev.Text.indexOf("\n",infoBoxStart)).toLowerCase();
+                       rev.InfoBox.Template= rev.Text.substring(infoBoxStart+2, rev.Text.indexOf("\n",infoBoxStart));
                        rev.Text=rev.Text.replace(rev.InfoBox.Text,"").replace("[","").replace("]","");
+                       rev.InfoBox.Text=rev.InfoBox.Text.toLowerCase();
 
                    }catch(Exception ex)
                    {

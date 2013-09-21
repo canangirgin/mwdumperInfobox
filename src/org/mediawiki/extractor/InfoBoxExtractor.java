@@ -16,7 +16,8 @@ import java.sql.*;
  */
 
 //BUrası şu an fazla CRF olmadan çıkartmaya çalışıyordu!!!
-//Metinlerden infoboxları çıkartıyor!!!!
+// Metinler ve infobox verilerini karşılaştırıp train set oluşturacak!!!!
+
 public class InfoBoxExtractor {
     private static ResultSet textTable = null;
     public static Blob textBlob = null;
@@ -26,8 +27,6 @@ public class InfoBoxExtractor {
     public static void main(String[] args) throws SQLException, IllegalAccessException, InstantiationException, ClassNotFoundException {
         System.out.println("Bağlantı sağlanıyor...");
         Template template = null;
-
-
         ConnectDB();
         sqlWriter = openWriter();
         while (getTextTable().next()) {
@@ -39,7 +38,12 @@ public class InfoBoxExtractor {
                 template.name = getTextTable().getString("p_ad");
                 template.revisionId = getTextTable().getInt("rev_id");
                 BirthPlaceExtractor bExtractor = new BirthPlaceExtractor();
+
                 template.Propetys.put("p_dogum_yer", bExtractor.Extract(template));
+
+
+
+
                 System.out.println(template.name + " doğum yer = " + template.Propetys.get("p_dogum_yer"));
                 sqlWriter.writeTemplate(template);
 
@@ -61,7 +65,8 @@ public class InfoBoxExtractor {
     }
 
     public static ResultSet getTextTable() throws SQLException {
-        if (textTable == null) {
+        if (textTable == null)
+        {
             Statement statement = InfoBoxExtractor.baglanti.createStatement();
             // TODO burayı incele
             // Deneme amaçlı şimdilik 10 tane ile çalış

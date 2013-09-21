@@ -101,10 +101,11 @@ public class SqlWriter15 extends SqlWriter {
         if (revision.InfoBox!=null)
         {
 
-            Object[][] infoParam= new Object[revision.InfoBox.Propetys.size()+3][1];
+            Object[][] infoParam= new Object[3][1];
             infoParam[0]= new Object[]{"infobox",revision.InfoBox.Text};
             infoParam[1]= new Object[]{"rev_id", new Integer(revision.Id)};
             infoParam[2]= new Object[]{"infobox_template",revision.InfoBox.Template};
+            /*
             int i =3;
             Set entries = revision.InfoBox.Propetys.entrySet();
             Iterator entriesIterator = entries.iterator();
@@ -114,7 +115,7 @@ public class SqlWriter15 extends SqlWriter {
                 infoParam[i]= new Object[]{mapping.getKey().toString(), ""+mapping.getValue()};
                 i++;
             }
-
+             */
             bufferInsertRow("infobox",infoParam);
         }
         //Templateler yazılıyor:

@@ -2,14 +2,39 @@ package org.mediawiki.extractor;
 
 import java.sql.SQLException;
 
-/**
- * Created with IntelliJ IDEA.
- * User: hs
- * Date: 02.05.2013
- * Time: 03:25
- * To change this template use File | Settings | File Templates.
- */
-public interface  IExtractor {
+public abstract class  IExtractor {
 
-    String Extract(Template template) throws SQLException;
+   String text=null ;
+   abstract String Extract(Template template) throws SQLException;
+
+    protected String GetSummary(String value,String label, int index)
+    {
+        String summary="";
+      try{
+      String bas[]= text.substring(0,index).split(" ");
+      String son[]= text.substring(index+ value.length()+2).split(" ");
+
+
+        int basIndex = bas.length < 10 ? bas.length :10;
+        int sonIndex = son.length < 10 ? son.length :10;
+        summary +=  System.getProperty("line.separator");
+    for ( int i=bas.length-basIndex; i<bas.length;i++)
+    {
+        summary += bas[i];
+        summary +=  System.getProperty("line.separator");
+    }
+        summary += value + "["+ label+"]";
+        summary +=  System.getProperty("line.separator");
+
+        for ( int i=0; i<sonIndex;i++)
+        {
+            summary += son[i];
+            summary +=  System.getProperty("line.separator");
+        }
+      }catch (Exception ex)
+      {
+          String hebee="";
+      }
+     return summary;
+    }
 }

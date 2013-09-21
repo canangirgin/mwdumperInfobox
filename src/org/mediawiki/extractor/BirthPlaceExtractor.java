@@ -9,19 +9,20 @@ import java.sql.SQLException;
  * Time: 03:26
  * To change this template use File | Settings | File Templates.
  */
-public class BirthPlaceExtractor implements IExtractor {
+public class BirthPlaceExtractor extends IExtractor {
     public String numbers = "0123456789";
     String[] splitter = new String[2];
     int[] splitterIndex = new int[2];
-   String text = null;
     String name=null;
     String[] locations= new String[]{"köy","ilçe","şehri","ilinin","kent"};
+    int index=-1;
      //TODO bu locations bölumn atlama. Burası yapılacak
     //TODO Bulduğun şey sayımı kontrolunu yap
 
     @Override
     public String Extract(Template template) throws SQLException {
         String birthPlace = null;
+        index=-1;
         text=template.text;
         name=template.name;
         birthPlace = null;
@@ -29,11 +30,16 @@ public class BirthPlaceExtractor implements IExtractor {
             if (validateBirthPlace(birthPlace)) {
                 birthPlace = getRoot(birthPlace).trim();
             }
-        return birthPlace;
+        if (birthPlace != null && birthPlace != "")
+        {
+            template.Propetys.put("p_dogum_yer",birthPlace);
+            return GetSummary (birthPlace,"p_dogum_yer",index);
+        }
+        return null;
     }
 
     private String getRoot(String birthPlace) {
-        int tempstop =birthPlace.indexOf("'");
+       /* int tempstop =birthPlace.indexOf("'");
         if (tempstop >0)
         {
             birthPlace=birthPlace.substring(0, tempstop);
@@ -44,7 +50,7 @@ public class BirthPlaceExtractor implements IExtractor {
             {
                 birthPlace=birthPlace.substring(0, tempstop);
             }
-        }
+        }*/
 
         return birthPlace;
     }
@@ -66,6 +72,7 @@ public class BirthPlaceExtractor implements IExtractor {
                 //Tek ayıraç var(")") ise burada doğum yeri yoktur.
                 if (splitter[0] != ")") {
                     birthPlace = text.substring(splitterIndex[0] + 1, splitterIndex[1]);
+                   index=    splitterIndex[0] + 1;
                 }
             } else {
                 //Splitten Öncesi karakter öncesini al
@@ -75,6 +82,7 @@ public class BirthPlaceExtractor implements IExtractor {
                     splitterIndex[1] = tempText.lastIndexOf(" ");
                 }
                 birthPlace = tempText.substring(splitterIndex[1] + 1);
+                index=   tempStart+ splitterIndex[1] + 1;
             }
         }
         if (!validateBirthPlace(birthPlace)) {
@@ -99,6 +107,7 @@ public class BirthPlaceExtractor implements IExtractor {
                 //Tek ayıraç var(")") ise burada doğum yeri yoktur.
                 if (splitter[0] != ")") {
                     birthPlace = text.substring(splitterIndex[0] + 1, splitterIndex[1]);
+                    index=    splitterIndex[0] + 1;
                 }
             } else {
                 //Splitten Öncesi karakter öncesini al
@@ -108,6 +117,7 @@ public class BirthPlaceExtractor implements IExtractor {
                     splitterIndex[1] = tempText.lastIndexOf(" ");
                 }
                 birthPlace = tempText.substring(splitterIndex[1] + 1);
+                index=   tempStart+ splitterIndex[1] + 1;
             }
         }
         if (!validateBirthPlace(birthPlace)) {
@@ -131,6 +141,7 @@ public class BirthPlaceExtractor implements IExtractor {
                 //Tek ayıraç var(")") ise burada doğum yeri yoktur.
                 if (splitter[0] != ")") {
                     birthPlace = text.substring(splitterIndex[0] + 1, splitterIndex[1]);
+                    index=    splitterIndex[0] + 1;
                 }
             } else {
                 //Splitten Öncesi karakter öncesini al
@@ -140,6 +151,7 @@ public class BirthPlaceExtractor implements IExtractor {
                     splitterIndex[1] = tempText.lastIndexOf(" ");
                 }
                 birthPlace = tempText.substring(splitterIndex[1] + 1);
+                index=   tempStart+ splitterIndex[1] + 1;
             }
         }
         if (!validateBirthPlace(birthPlace)) {
@@ -165,6 +177,7 @@ public class BirthPlaceExtractor implements IExtractor {
                 //Tek ayıraç var(")") ise burada doğum yeri yoktur.
                 if (splitter[0] != ")") {
                     birthPlace = text.substring(splitterIndex[0] + 1, splitterIndex[1]);
+                    index=    splitterIndex[0] + 1;
                 }
             } else {
                 //Splitten Öncesi karakter öncesini al
@@ -174,6 +187,7 @@ public class BirthPlaceExtractor implements IExtractor {
                     splitterIndex[1] = tempText.lastIndexOf(" ");
                 }
                 birthPlace = tempText.substring(splitterIndex[1] + 1);
+                index=   tempStart+ splitterIndex[1] + 1;
             }
         }
         if (!validateBirthPlace(birthPlace)) {
@@ -265,7 +279,6 @@ public class BirthPlaceExtractor implements IExtractor {
     private void getSplitter(String text, int tempStart, int tempIndex) {
         // Noktalı virgul var ise ayıraç=; ,Virgul var ise ayıraç=, ,- var ise ayıraç=- ,yok ise ayıraç=”)”
         String textTemp = text.substring(tempStart, text.indexOf(")", tempStart) + 1);
-
         int  tIndex = textTemp.indexOf(")", 0) + tempStart;
         String tempSplitter = ")";
         if (textTemp.indexOf(";", 0)!=-1 && textTemp.indexOf(";", 0) + tempStart < tIndex)
@@ -301,9 +314,10 @@ public class BirthPlaceExtractor implements IExtractor {
         {
             if(birthPlaceTemp.contains(loc))
             {
-                return  controlLocation(text,tempStart-1);
+                return  controlLocation(text,tempStart);
             }
         }
+        index = tempStart;
         return birthPlaceTemp;
     }
 
