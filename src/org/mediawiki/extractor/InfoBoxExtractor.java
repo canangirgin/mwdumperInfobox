@@ -73,7 +73,7 @@ public class InfoBoxExtractor {
             // Şimdilik sadece infobox olanlara bak
             textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id ");
            // textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id LIMIT 0,10");
-            //textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id and rev_id='9086735'");
+            //   textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id and rev_id='10463244'");
         }
         return textTable;
     }

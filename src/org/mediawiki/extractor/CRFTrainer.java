@@ -151,7 +151,7 @@ public class CRFTrainer {
 
             textTable = statement.executeQuery("select * from text,infobox_analyse  where rev_id = old_id ");
             // textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id LIMIT 0,10");
-            //  textTable = statement.executeQuery("select * from text,infobox_analyse  where rev_id = old_id and rev_id='12750560'");
+            //   textTable = statement.executeQuery("select * from text,infobox_analyse  where rev_id = old_id and rev_id='10463244'");
         }
         return textTable;
     }
@@ -162,10 +162,9 @@ public class CRFTrainer {
     }
 
     protected static void writeFile(String trainTxt) throws IOException {
-        String parseText = ParseString(trainTxt);
-        out.write(parseText);
+        out.write(trainTxt);
     }
-
+  /*
     private static String ParseString(String trainTxt) {
         String[] stringList = trainTxt.split(" ");
         String newTxt = "";
@@ -178,7 +177,7 @@ public class CRFTrainer {
         }
         return newTxt;
     }
-
+    */
     private static boolean isProperty(String s) {
         for (KeyValue key : InfoBoxConst.PropetyBulunacak) {
             if (s.equals("[B_" + key.dbKey + "]")) {
