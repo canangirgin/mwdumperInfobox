@@ -19,21 +19,21 @@ public abstract class  IExtractor {
         summary +=  System.getProperty("line.separator");
     for ( int i=bas.length-basIndex; i<bas.length;i++)
     {
-        summary += bas[i];
-        summary +=  System.getProperty("line.separator");
+        summary += bas[i]+ " ";
     }
-        summary += son[0] + " ["+ label+"]";
-        summary +=  System.getProperty("line.separator");
+        summary += "<ENAMEX_TYPE=\""+label+"\">"+ son[0] + "</ENAMEX> ";
+  //      summary +=  System.getProperty("line.separator");
 
         for ( int i=1; i<sonIndex;i++)
         {
-            summary += son[i];
-            summary +=  System.getProperty("line.separator");
+            summary += son[i] + " ";
+    //        summary +=  System.getProperty("line.separator");
         }
       }catch (Exception ex)
       {
           String hebee="";
       }
+     //   summary +=  System.getProperty("line.separator");
      return summary;
     }
 }
