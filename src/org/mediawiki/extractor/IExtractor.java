@@ -33,7 +33,7 @@ public abstract class  IExtractor {
       {
           String hebee="";
       }
-     //   summary +=  System.getProperty("line.separator");
+        summary +=  System.getProperty("line.separator");
      return summary;
     }
 }
