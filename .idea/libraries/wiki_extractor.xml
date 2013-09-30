@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="wiki-extractor">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../wiki-extractor/out/artifacts/wiki_extractor_jar/wiki-extractor.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../wiki-extractor/out/artifacts/wiki_extractor_jar/wiki-extractor.jar!/" />
+    </SOURCES>
+  </library>
+</component>

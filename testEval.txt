@@ -1,0 +1,200 @@
+8268120,2,p_dogum_yer,Ankara’da,
+8492244,2,p_dogum_yer,Records|Fabric),
+8929250,4,p_dogum_yer,Zirgan),cirgen
+8977378,1,p_dogum_yer,Brünn,brünn, çekoslavakya
+9063527,5,p_dogum_yer,,istanbul
+9064111,2,p_dogum_yer,Üsküdar,,
+9086735,1,p_dogum_yer,İzmir),,izmir tur
+9207348,4,p_dogum_yer,Bayram,çumra, konya
+9253554,4,p_dogum_yer,(UTC),kopenhag, danimarka
+9342334,1,p_dogum_yer,Niğde),,niğde
+9436874,2,p_dogum_yer,1971,
+9480712,2,p_dogum_yer,Oyuncunun,
+9480861,5,p_dogum_yer,,
+9511348,1,p_dogum_yer,İstanbul,istanbul, türkiye
+9624435,1,p_dogum_yer,istanbul'da,istanbul, türkiye
+9637783,2,p_dogum_yer,İstanbul),,
+9645769,2,p_dogum_yer,Pearls),
+9648204,4,p_dogum_yer,İstanbul'da,ermenek, karaman,
+9707971,4,p_dogum_yer,Akşehir,türkiye , konya
+9726413,1,p_dogum_yer,Bursa,bursa
+9734883,4,p_dogum_yer,I.,osmanlı devleti
+9738356,1,p_dogum_yer,Manitoba),,kanada , manitoba
+9801668,1,p_dogum_yer,Eskişehir,eskişehir türkiye
+9807981,5,p_dogum_yer,,
+9900565,2,p_dogum_yer,Kategori:1955,
+9946153,2,p_dogum_yer,Capli),
+9950932,4,p_dogum_yer,Ankara'da,türkiye
+9952504,2,p_dogum_yer,valign="middle",
+9975497,1,p_dogum_yer,Hatay),,hatay,türkiye
+10023851,2,p_dogum_yer,İstanbul'da,
+10048073,1,p_dogum_yer,Bursa),,bursa tur
+10111520,1,p_dogum_yer,Ankara),,ankara, türkiye
+10225379,1,p_dogum_yer,Devletleri'nde,west haven, amerika birleşik devletleri,a.b.d.
+10246764,1,p_dogum_yer,İstanbul),istanbul, türkiye
+10303411,4,p_dogum_yer,Holkenborg''',lichtenvoorde,  hollanda
+10309646,2,p_dogum_yer,Alexandre,
+10381985,5,p_dogum_yer,,
+10395741,1,p_dogum_yer,Kayseri),kayseri,türkiye
+10398996,2,p_dogum_yer,Hanna,,
+10456647,1,p_dogum_yer,Londra'da,londra, ingiltere
+10456676,1,p_dogum_yer,Kategori:Siren,siren,makedonya
+10461151,2,p_dogum_yer,Malsch,,
+10463244,1,p_dogum_yer,Ankara),,ankara,türkiye
+10463565,4,p_dogum_yer,Sedan|Sedan,nantes,fransa
+10463847,1,p_dogum_yer,Karabacak,,karabacak, sarıkaya,karabacak, sarıkaya, yozgat,sarıkaya, yozgat
+10464218,5,p_dogum_yer,,
+10466034,1,p_dogum_yer,Adana,adana,türkiye
+10466111,2,p_dogum_yer,yılında,
+10470553,1,p_dogum_yer,İzmir),,izmir,türkiye
+10473485,1,p_dogum_yer,Malatya),,malatya,türkiye
+10494122,1,p_dogum_yer,Adana),,adana,türkiye
+10507764,4,p_dogum_yer,Frederik,eindhoven,hollanda
+10509361,1,p_dogum_yer,Ankara),,ankara,türkiye
+10530334,5,p_dogum_yer,,
+10562752,1,p_dogum_yer,Conakry),,conakry,gine
+10576294,1,p_dogum_yer,İzmir),türkiye , izmir
+10588389,1,p_dogum_yer,Zeitz,,zeitz, saksonya krallığı,saksonya, alman imparatorluğu,alman imp.
+10601181,1,p_dogum_yer,Straßburg,,straßburg, alman imparatorluğu,alman imp.
+10614636,4,p_dogum_yer,Kategori:1910,türkiye
+10623280,4,p_dogum_yer,Adana),tur
+10630948,4,p_dogum_yer,Samuel,amerika
+10660505,1,p_dogum_yer,Béziers),béziers,fransa
+10673419,1,p_dogum_yer,Çanakkale),,çanakkale,türkiye
+10694527,2,p_dogum_yer,Kategori:1959,
+10694577,1,p_dogum_yer,Adana,adana , türkiye
+10713306,1,p_dogum_yer,Kastamonu),,kastamonu,türkiye
+10719828,2,p_dogum_yer,Usta,
+10722241,1,p_dogum_yer,Tarifa),,tarifa,ispanya
+10728387,4,p_dogum_yer,Allahverdinin,göyçe ,geğarkunik,şafak ,vanevan,
+10739858,4,p_dogum_yer,Kategori:1916,fatsa , türkiye
+10748217,1,p_dogum_yer,Barakaldo,,barakaldo,ispanya
+10750604,1,p_dogum_yer,Akçaabat),akçaabat, trabzon,türkiye
+10750978,1,p_dogum_yer,Edirne),edirne, türkiye
+10778749,1,p_dogum_yer,Göyçe,göyçe,geğarkunik, sarıyakup ,zergerli,
+10793017,2,p_dogum_yer,Can,
+10822304,5,p_dogum_yer,,
+10852278,1,p_dogum_yer,Gandia,,gandia,ispanya
+10874934,1,p_dogum_yer,Çanakkale),çanakkale yenice nevruz,
+10887683,1,p_dogum_yer,Bury,,bury, greater manchester, ingiltere
+10891600,1,p_dogum_yer,Jakobstad,jakobstad , finlandiya
+10892453,5,p_dogum_yer,,
+10892536,1,p_dogum_yer,Esentepe,,esentepe, kıbrıs
+10897074,1,p_dogum_yer,Ankara),,ankara
+10920335,4,p_dogum_yer,1981,,izmir
+10923026,1,p_dogum_yer,Çanakkale),,çanakkale
+10927348,4,p_dogum_yer,Richard,londra, ingiltere
+10928718,1,p_dogum_yer,İstanbul,kadıköy, istanbul, türkiye
+10931694,1,p_dogum_yer,Londra,,londra,ingiltere
+10935639,2,p_dogum_yer,[[Jeonju]],,
+10970379,4,p_dogum_yer,Kategori:1754,redding, connecticut, amerika birleşik devletleri,abd
+10971157,5,p_dogum_yer,,aktutan, gümüşhane, türkiye
+10991913,4,p_dogum_yer,(Kırım,taşkent, özbekistan
+10996877,1,p_dogum_yer,Londra'da,londra, ingiltere
+10999167,2,p_dogum_yer,Eyaleti'nin,
+11000372,1,p_dogum_yer,Aydın),aydın, türkiye
+11002592,2,p_dogum_yer,Haziran,
+11018271,1,p_dogum_yer,Honduras’lı,catacamas, honduras
+11024169,1,p_dogum_yer,Dayton-Ohio).,dayton, ohio, amerika birleşik devletleri,abd
+11025969,1,p_dogum_yer,Malatya),,malatya, türkiye
+11028862,1,p_dogum_yer,İstanbul),,istanbul
+11030697,1,p_dogum_yer,İstanbul),,istanbul, türkiye
+11037360,2,p_dogum_yer,SABHANKRA,,
+11041429,5,p_dogum_yer,,
+11043013,1,p_dogum_yer,Beypazarı'nda,beypazarı, ,türkiye,,ankara
+11045446,4,p_dogum_yer,Kategori:1809,ger, fürt
+11053407,2,p_dogum_yer,'''Cragataska''',
+11055588,1,p_dogum_yer,İngiltere'de,huddersfield, yorkshire, ingiltere,
+11064790,4,p_dogum_yer,Çavuş,vladimirovtsi, bulgaristan
+11069690,4,p_dogum_yer,Çamlıhemşin,Rize),,türkiye
+11073888,4,p_dogum_yer,Karşıyaka,,izmir
+11091690,1,p_dogum_yer,Eskişehir),,eskişehir,türkiye
+11091790,1,p_dogum_yer,İstanbul,istanbul, türkiye
+11122882,1,p_dogum_yer,Dakar),dakar,senegal
+11127145,1,p_dogum_yer,İstanbul),,istanbul, türkiye
+11137151,1,p_dogum_yer,Ankara),,türkiye , ankara
+11139952,4,p_dogum_yer,1987,,izmir, türkiye
+11146157,2,p_dogum_yer,Seattle'da,
+11150925,2,p_dogum_yer,Puppy'nin,
+11151049,1,p_dogum_yer,Trabzon),,trabzon,türkiye
+11153201,1,p_dogum_yer,Kırıkkale'de,kırıkkale
+11162090,1,p_dogum_yer,Kategori:Berlin,berlin
+11164094,2,p_dogum_yer,Ayrıldı),
+11178662,4,p_dogum_yer,Roma),,carrara, toskana, italya
+11185710,1,p_dogum_yer,Çorum),,çorum,türkiye
+11186131,1,p_dogum_yer,Maçka,,maçka, trabzon,türkiye
+11186556,1,p_dogum_yer,İstanbul),istanbul,türkiye
+11186617,1,p_dogum_yer,İstanbul,istanbul,türkiye
+11186622,1,p_dogum_yer,İstanbul,istanbul,türkiye
+11186677,1,p_dogum_yer,İstanbul,istanbul,türkiye
+11186736,1,p_dogum_yer,İstanbul,istanbul,türkiye
+11186865,1,p_dogum_yer,Bakırköy,,bakırköy, istanbul,türkiye
+11187080,1,p_dogum_yer,Giresun),giresun,türkiye
+11188666,1,p_dogum_yer,Kategori:Sivas,sivas,türkiye
+11189283,1,p_dogum_yer,Belçika,gent,belçika
+11194918,4,p_dogum_yer,Sao,sao paulo,brezilya
+11203985,4,p_dogum_yer,Kategori:326,klikya
+11213835,4,p_dogum_yer,Bulgaristan),,tur
+11223594,4,p_dogum_yer,Kategori:1983,setúbal, portekiz
+11226426,1,p_dogum_yer,Abidjan),abidjan,fildişi sahili
+11236095,1,p_dogum_yer,Münih,,münih, bavyera
+11238299,4,p_dogum_yer,Kategori:1949,new york
+11238664,1,p_dogum_yer,Sakarya),,sakarya,türkiye
+11242113,5,p_dogum_yer,,libya
+11273887,4,p_dogum_yer,Solomon),londra , ingiltere
+11274626,1,p_dogum_yer,İspanyol,valladolid,ispanya
+11277433,1,p_dogum_yer,Akra),,akra,gana
+11287425,4,p_dogum_yer,Kategori:1894,altenkirchen
+11289006,2,p_dogum_yer,Bulgariae),
+11290729,1,p_dogum_yer,Erzincan,erzincan
+11293722,1,p_dogum_yer,Urfa'da,urfa
+11293860,4,p_dogum_yer,Kategori:1908,osterfeld
+11294519,4,p_dogum_yer,Germany,dresden
+11305226,4,p_dogum_yer,1987),estonya
+11305842,1,p_dogum_yer,İstanbul).,istanbul
+11318072,1,p_dogum_yer,Sorgun,,sorgun, yozgat,türkiye
+11326133,1,p_dogum_yer,Fatih,fatih, istanbul, türkiye
+11334151,1,p_dogum_yer,İstanbul,istanbul
+11361296,1,p_dogum_yer,Lahor-Pakistan),pakistan - lahor
+11370952,1,p_dogum_yer,Bursa),bursa,türkiye
+11384507,4,p_dogum_yer,1949,Kayseri),,kayseri-türkiye
+11392578,2,p_dogum_yer,Some",
+11395045,2,p_dogum_yer,Helsinki,,
+11395499,1,p_dogum_yer,Milano),,milano,italya
+11397517,4,p_dogum_yer,|,aberdeen, washington, amerika birleşik devletleri,abd
+11399831,1,p_dogum_yer,Adana,,adana, türkiye
+11401779,1,p_dogum_yer,İstanbul,,şişli, istanbul, türkiye
+11402983,2,p_dogum_yer,Adel'i,
+11405158,1,p_dogum_yer,Londra'da,lewisham, londra, birleşik krallık
+11406891,4,p_dogum_yer,Sarıkamış,kars, türkiye
+11413321,2,p_dogum_yer,Lahti'de,
+11415205,1,p_dogum_yer,San'a,,san'a, osmanlı imparatorluğu,, yemen cumhuriyeti,
+11430371,2,p_dogum_yer,Chicago,,
+11431010,1,p_dogum_yer,köyünde,kaçağan köyü, marneuli ,sarvan,, gürcistan ssc, sovyet sosyalist cumhuriyetler birliği,sscb
+11431025,5,p_dogum_yer,,kaçağan köyü, marneuli ,sarvan,, gürcistan ssc, sovyet sosyalist cumhuriyetler birliği,sscb
+11434231,1,p_dogum_yer,Sofya,,sofya,bulgaristan
+11434514,5,p_dogum_yer,,
+11439228,4,p_dogum_yer,Tanır,kahramanmaraş, türkiye
+11440367,1,p_dogum_yer,Tiflis,tiflis, gürcistan ssc, sovyet sosyalist cumhuriyetler birliği,sscb
+11441397,1,p_dogum_yer,İstanbul),,istanbul, türkiye
+11441402,1,p_dogum_yer,Kategori:Kalkandelen,kalkandelen,yugoslavya sosyalist federal cumhuriyeti,yugoslavya sfc
+11441415,1,p_dogum_yer,Akçaabat,,akçaabat, trabzon,türkiye
+11442359,1,p_dogum_yer,İzmir),,izmir, türkiye
+11442772,1,p_dogum_yer,Varşova'da,varşova
+11442862,2,p_dogum_yer,(Italy)|Nicosia,,
+11443545,1,p_dogum_yer,İstanbul),,istanbul
+11445255,1,p_dogum_yer,Viyana'da,viyana, avusturya
+11445578,1,p_dogum_yer,Giresun),,giresun
+11447297,2,p_dogum_yer,Hill''',
+11453050,4,p_dogum_yer,Emrud,kızıltepe-mardin, türkiye
+11458284,2,p_dogum_yer,İstanbul),
+11462896,1,p_dogum_yer,Filibe,,filibe,bulgaristan
+11463515,2,p_dogum_yer,Serdar,
+11470296,1,p_dogum_yer,Iowa'da,ıowa, amerika birleşik devletleri,abd
+11473162,1,p_dogum_yer,Moskova'da,moskova
+11474576,1,p_dogum_yer,Marneuli,kaçağan köyü, marneuli ,sarvan,, gürcistan ssc, sovyet sosyalist cumhuriyetler birliği,sscb
+11485753,4,p_dogum_yer,Kategori:1910,saargemünd, alman imparatorluğu,alman imp.
+11486894,1,p_dogum_yer,Dimona,dimona,israil
+11487334,2,p_dogum_yer,(Siu,
+11497727,5,p_dogum_yer,,istanbul, tur
+11500246,2,p_dogum_yer,Mersin,Tarsus,

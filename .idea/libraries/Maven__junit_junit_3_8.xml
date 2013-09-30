@@ -7,7 +7,7 @@
       <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8/junit-3.8-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8/junit-3.8-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../wiki-extractor/out/artifacts/wiki_extractor_jar/wiki-extractor.jar!/" />
     </SOURCES>
   </library>
 </component>
