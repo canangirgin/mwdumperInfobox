@@ -37,11 +37,9 @@ public class InfoBoxExtractor {
                 template.text = new String(bdata);
                 template.name = getTextTable().getString("p_ad");
                 template.revisionId = getTextTable().getInt("rev_id");
-                BirthPlaceExtractor bExtractor = new BirthPlaceExtractor();
+                //BirthPlaceExtractor bExtractor = new BirthPlaceExtractor();
 
-                template.Propetys.put("p_dogum_yer", bExtractor.Extract(template));
-
-
+                //template.Propetys.put("p_dogum_yer", bExtractor.Extract(template,));
 
 
                 System.out.println(template.name + " doğum yer = " + template.Propetys.get("p_dogum_yer"));

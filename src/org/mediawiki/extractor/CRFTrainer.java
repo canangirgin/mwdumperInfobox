@@ -1,6 +1,5 @@
 package org.mediawiki.extractor;
 
-import org.mediawiki.importer.KeyValue;
 import org.mediawiki.importer.SqlServerStream;
 import org.mediawiki.importer.SqlWriter;
 import org.mediawiki.importer.SqlWriter15;
@@ -30,14 +29,14 @@ public class CRFTrainer {
     private static FileWriter ftest;
     private static BufferedWriter out;
     private static BufferedWriter outTest;
-    private static  Set entries;
-    private static Iterator entriesIterator ;
+    private static Set entries;
+    private static Iterator entriesIterator;
     private static String defined = "";
     private static String revText;
     private static int testSCount;
-    static ArrayList<Integer> testList= new ArrayList<Integer>();
-    static HashMap  testCount=new HashMap();
-
+    static ArrayList<Integer> testList = new ArrayList<Integer>();
+    static HashMap testCount = new HashMap();
+    public static String labeledText = "";
 
 
     public static void main(String[] args) throws SQLException, IllegalAccessException, InstantiationException, ClassNotFoundException, IOException {
@@ -46,14 +45,14 @@ public class CRFTrainer {
         ConnectDB();
         sqlWriter = openWriter();
         fstream = new FileWriter("out.txt");
-        ftest= new FileWriter("test.txt");
+        ftest = new FileWriter("test.txt");
         out = new BufferedWriter(fstream);
-        outTest= new BufferedWriter(ftest);
+        outTest = new BufferedWriter(ftest);
 
         while (getTextInfoTable().next()) {
             try {
-                if (testSCount<200)
-                {
+
+                if (testSCount < 200) {
                     testList.add(getTextInfoTable().getInt("rev_id"));
                     testSCount++;
                     continue;
@@ -79,56 +78,45 @@ public class CRFTrainer {
     }
 
     private static void setInfoProperties() throws SQLException {
-        //infoBox.Propetys.put("p_dogum_tar", getTextTable().getString("p_dogum_tar"));
+        infoBox.Propetys.put("p_dogum_tar", getTextInfoTable().getString("p_dogum_tar"));
         infoBox.Propetys.put("p_dogum_yer", getTextInfoTable().getString("p_dogum_yer"));
         infoBox.Propetys.put("p_ad", getTextInfoTable().getString("p_ad"));
-        //infoBox.Propetys.put("p_olum_tar", getTextTable().getString("p_olum_tar"));
-       // infoBox.Propetys.put("p_olum_yer", getTextInfoTable().getString("p_olum_yer"));
+        infoBox.Propetys.put("p_olum_tar", getTextInfoTable().getString("p_olum_tar"));
+        // infoBox.Propetys.put("p_olum_yer", getTextInfoTable().getString("p_olum_yer"));
     }
 
-    private static String defineTrainString(String revText) {
-        Template template=null;
+    private static String defineTrainString(String revText) throws SQLException {
+
+        Template template = null;
+        textBlob = getTextInfoTable().getBlob("old_text");
+        byte[] bdata = textBlob.getBytes(1, (int) textBlob.length());
+
+        labeledText = new String(bdata);
         while (entriesIterator.hasNext()) {
             try {
-                IExtractor iExtractor=null ;
+                IExtractor iExtractor = null;
                 Map.Entry mapping = (Map.Entry) entriesIterator.next();
                 //TODO burası factory olacak!!!
-                String mappingKey=   mapping.getKey().toString();
-                //TODO şimdilik ilk 200  iyisiyle kötusuyle test için alıyorum.
-
-                if(mappingKey.equals("p_dogum_yer"))
-                {
-                    iExtractor = new BirthPlaceExtractor();
-                }
-                if (iExtractor!=null)
-                {
-                template = new Template();
-                textBlob = getTextInfoTable().getBlob("old_text");
-                byte[] bdata = textBlob.getBytes(1, (int) textBlob.length());
-                template.text = new String(bdata);
-                template.name = getTextInfoTable().getString("p_ad");
-                template.revisionId = getTextInfoTable().getInt("rev_id");
-                String summary =  iExtractor.Extract(template);
-              //TODO test için burada kes(50 tane)
-                    boolean checkResult=CheckResult(template, mappingKey, summary);
+                String mappingKey = mapping.getKey().toString();
+                if (!mappingKey.equals("p_ad")) {
                     //TODO şimdilik ilk 200  iyisiyle kötusuyle test için alıyorum.
-                    if (checkResult)
-                    {
-                        defined += summary;
+
+                    if (mappingKey.equals("p_dogum_yer")) {
+                        iExtractor = new BirthPlaceExtractor();
+                    } else {
+                        iExtractor = new DateExtractor();
                     }
-                    /*
-                    if( checkResult && CheckTestCount(mappingKey) )
-                   {
-                       ((List<Integer>)testCount.get(mappingKey)).add( template.revisionId);
-                   }
-                   else  if (checkResult)
-                   {
-                       defined += summary;
-                   }
-                    */
-                    System.out.println(template.name + " doğum yer = " + template.Propetys.get("p_dogum_yer"));
+                    if (iExtractor != null) {
+                        template = new Template();
+                        //template.text = labeledText;
+
+                        template.name = getTextInfoTable().getString("p_ad");
+                        template.revisionId = getTextInfoTable().getInt("rev_id");
+                        iExtractor.Extract(template, mapping);
+                        System.out.println(template.name + " "+mappingKey +" = " + template.Propetys.get(mappingKey));
+                    }
                 }
-            }    catch (SQLException e1) {
+            } catch (SQLException e1) {
                 e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             } catch (Exception e5) {
                 e5.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -136,38 +124,129 @@ public class CRFTrainer {
             }
 
         }
+        return GetLabeledSummary();
 
-        return defined;
+        /*
+    *   String bas[]= text.substring(0,index).split(" ");
+      String son[]= text.substring(index).trim().split(" ");
+
+
+      int basIndex = bas.length < 5 ? bas.length :5;
+      int sonIndex = son.length < 5 ? son.length :5;
+          summaryOut +=  System.getProperty("line.separator");
+    for ( int i=bas.length-basIndex; i<bas.length;i++)
+    {
+        summaryOut += bas[i]+ " ";
     }
-   //Teste konulacaksa true döner
+     summaryOut += "<ENAMEX_TYPE=\""+label+"\">"+ son[0] + "</ENAMEX> ";
+
+        for ( int i=1; i<sonIndex;i++)
+        {
+            summaryOut += son[i] + " ";
+        }
+      }catch (Exception ex)
+      {
+          String hebee="";
+      }
+        summaryOut +=  System.getProperty("line.separator");
+     return summaryOut;
+
+    * */
+    }
+
+    //Teste konulacaksa true döner
     private static boolean CheckTestCount(String mappingKey) {
 
-        if (testCount.containsKey(mappingKey))
-        {
-          if (((List<Integer>)testCount.get(mappingKey)).size()<50)
-          {
+        if (testCount.containsKey(mappingKey)) {
+            if (((List<Integer>) testCount.get(mappingKey)).size() < 50) {
 
-            return true;    //Test verisine koy.
-          }
+                return true;    //Test verisine koy.
+            }
 
-        } else
-        {
-            testCount.put(mappingKey,new ArrayList<Integer>());
+        } else {
+            testCount.put(mappingKey, new ArrayList<Integer>());
             return true;          //Test verisine koy.
         }
         return false;  //Test verisine koyma. Train Verisine Koy
     }
 
-    private static boolean CheckResult(Template template, String mappingKey, String summary) {
-        if (summary != null && template.Propetys.get(mappingKey).toString().length()<4) {
-            if(infoBox.Propetys.get(mappingKey).toString().toLowerCase().contains(template.Propetys.get(mappingKey).toString().toLowerCase() ))
-            return true;
-        }else
-         if (summary != null && infoBox.Propetys.get(mappingKey).toString().toLowerCase().contains(template.Propetys.get(mappingKey).toString().toLowerCase().substring(0,4)))
-         {
-            return true;
-         }
-        return false;
+    private static String GetLabeledSummary() {
+        //TODO Texte Bak
+        //TODO Labelların indexlerini bul
+        //TODO  5 + ve 5 * de  yine label var ise alınacak indexleri ona göre belirle.
+        String summary="";
+        String[] labeledTextArray=labeledText.split("<ENAMEX_TYPE=");
+        if (labeledTextArray.length<2)return null;
+//!!!Burayı incele ve debug et
+        for (int k=0;k<labeledTextArray.length;k++)
+        {
+            String s= labeledTextArray[k];
+            if (summary.trim().isEmpty())
+            {
+                String[] split=  s.trim().split(" ");
+                if (split.length<=5)
+                {
+                    summary =s;
+                } else
+                {
+                    for ( int i=split.length-5; i<split.length;i++)
+                    {
+                        summary += split[i] + " ";
+                    }
+                }
+
+                continue;
+            }
+
+            String[] split=  s.trim().split(" ");
+            if (k!=labeledTextArray.length-1)
+            {
+            if (split.length<=11)
+           {
+               summary+= "<ENAMEX_TYPE="+s;
+
+           }else
+           {  //ilk başı al
+               summary +=  "<ENAMEX_TYPE=";
+               for ( int i=0; i<6;i++)
+               {
+                   summary += split[i] + " ";
+
+               }
+               summary +=  System.getProperty("line.separator");
+               summary +=  System.getProperty("line.separator");
+               for ( int i=split.length-5; i<split.length;i++)
+               {
+                   summary += split[i] + " ";
+               }
+
+           }
+            }else
+            {
+                if (split.length<=5)
+                {
+                    summary+= "<ENAMEX_TYPE="+s;
+
+                    summary +=  System.getProperty("line.separator");
+                    summary +=  System.getProperty("line.separator");
+                }else
+                {
+                    //ilk başı al
+                    summary +=  "<ENAMEX_TYPE=";
+                    for ( int i=0; i<6;i++)
+                    {
+                        summary += split[i] + " ";
+                    }
+                    summary +=  System.getProperty("line.separator");
+                    summary +=  System.getProperty("line.separator");
+
+                }
+            }
+
+
+
+    }
+        return summary;
     }
 
 
@@ -177,7 +256,7 @@ public class CRFTrainer {
 
             textTable = statement.executeQuery("select * from text,infobox_analyse  where rev_id = old_id ");
             // textTable = statement.executeQuery("select rev_id,old_id,old_text,p_ad from text,infobox where rev_id = old_id LIMIT 0,10");
-            //   textTable = statement.executeQuery("select * from text,infobox_analyse  where rev_id = old_id and rev_id='10463244'");
+            //   textTable = statement.executeQuery("select * from text,infobox_analyse  where rev_id = old_id and rev_id='12563013'");
         }
         return textTable;
     }
@@ -188,14 +267,15 @@ public class CRFTrainer {
     }
 
     protected static void writeFile(String trainTxt) throws IOException {
+       if (trainTxt!=null && !trainTxt.trim().isEmpty())
         out.write(trainTxt);
     }
+
     protected static void writeTestFile() throws IOException {
 
-        StringBuffer testBf=new StringBuffer();
-        for(Integer revId:testList)
-        {
-            testBf.append(revId +"," );
+        StringBuffer testBf = new StringBuffer();
+        for (Integer revId : testList) {
+            testBf.append(revId + ",");
         }
         testBf.deleteCharAt(testBf.lastIndexOf(","));
        /* Iterator testIterator = testCount.entrySet().iterator();
@@ -216,14 +296,6 @@ public class CRFTrainer {
         outTest.write(testBf.toString());
     }
 
-    private static boolean isProperty(String s) {
-        for (KeyValue key : InfoBoxConst.PropetyBulunacak) {
-            if (s.equals("[B_" + key.dbKey + "]")) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     private static SqlWriter15 openWriter() {
         SqlServerStream sqlStream = new SqlServerStream(conn);

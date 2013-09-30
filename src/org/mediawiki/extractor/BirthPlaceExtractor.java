@@ -1,6 +1,7 @@
 package org.mediawiki.extractor;
 
 import java.sql.SQLException;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,22 +21,20 @@ public class BirthPlaceExtractor extends IExtractor {
     //TODO Bulduğun şey sayımı kontrolunu yap
 
     @Override
-    public String Extract(Template template) throws SQLException {
+    public void Extract(Template template,Map.Entry infobox) throws SQLException {
         String birthPlace = null;
         index=-1;
-        text=template.text;
         name=template.name;
         birthPlace = null;
-        birthPlace = Template1(text);
+        birthPlace = Template1(CRFTrainer.labeledText);
             if (validateBirthPlace(birthPlace)) {
                 birthPlace = getRoot(birthPlace).trim();
             }
         if (birthPlace != null && birthPlace != "")
         {
-            template.Propetys.put("p_dogum_yer",birthPlace);
-            return GetSummary (birthPlace,"p_dogum_yer",index);
+            template.Propetys.put(infobox.getKey(),birthPlace.trim());
+            LabelData(birthPlace.trim(), infobox,index);
         }
-        return null;
     }
 
     private String getRoot(String birthPlace) {
@@ -62,7 +61,7 @@ public class BirthPlaceExtractor extends IExtractor {
         String controlNumber = null;
         String tempText = "";
 
-        int tempStart = text.indexOf("(d.");
+        int tempStart = CRFTrainer.labeledText.indexOf("(d.");
         if (tempStart > 0) {
             getSplitters(text, tempStart);
             //Splitten Öncesine bak. Karakter mi?

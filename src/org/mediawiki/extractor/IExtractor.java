@@ -1,39 +1,38 @@
 package org.mediawiki.extractor;
 
 import java.sql.SQLException;
+import java.util.Map;
 
 public abstract class  IExtractor {
 
-   String text=null ;
-   abstract String Extract(Template template) throws SQLException;
 
-    protected String GetSummary(String value,String label, int index)
+   abstract void Extract(Template template,Map.Entry infobox) throws SQLException;
+
+    protected void LabelData(String result,Map.Entry infobox, int index)
     {
-        String summary="";
-      try{
-      String bas[]= text.substring(0,index).split(" ");
-      String son[]= text.substring(index).trim().split(" ");
-
-        int basIndex = bas.length < 5 ? bas.length :5;
-        int sonIndex = son.length < 5 ? son.length :5;
-        summary +=  System.getProperty("line.separator");
-    for ( int i=bas.length-basIndex; i<bas.length;i++)
-    {
-        summary += bas[i]+ " ";
-    }
-        summary += "<ENAMEX_TYPE=\""+label+"\">"+ son[0] + "</ENAMEX> ";
-  //      summary +=  System.getProperty("line.separator");
-
-        for ( int i=1; i<sonIndex;i++)
+        if (CheckResult(result,""+infobox.getValue()))
         {
-            summary += son[i] + " ";
-    //        summary +=  System.getProperty("line.separator");
+            index= CRFTrainer.labeledText.indexOf(result,index);
+    //TODO daha önce işaretlenmiş bir veri var ise bunu dikkate almak gerekir.
+    //O yuzden sadece işaretleyecek en son summary çıkartacak.
+        CRFTrainer.labeledText=CRFTrainer.labeledText.substring(0,index) +"<ENAMEX_TYPE=\""+infobox.getKey()+"\">"+ result.trim() + "</ENAMEX>"+ CRFTrainer.labeledText.substring(CRFTrainer.labeledText.indexOf(" ",index+result.length()));
         }
-      }catch (Exception ex)
-      {
-          String hebee="";
-      }
-        summary +=  System.getProperty("line.separator");
-     return summary;
     }
+
+    private static boolean CheckResult(String result, String values) {
+        if (result!= null && !result.isEmpty() && result.length()<4)
+        {
+             if (values.toLowerCase().contains(result.toLowerCase()))
+             {
+                 return true;
+             }
+        }else
+        {
+            if (result != null && !result.isEmpty() && values.toLowerCase().contains(result.toLowerCase().substring(0,4)))
+            { return true;}
+        }
+        return false;
+    }
+
+
 }
