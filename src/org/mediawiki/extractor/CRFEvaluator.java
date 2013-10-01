@@ -71,11 +71,11 @@ public class CRFEvaluator {
 
     private static void setInfoProperties() throws SQLException, IOException {
         infoBox.Propetys.clear();
-        //infoBox.Propetys.put("p_dogum_tar", getTextTable().getString("p_dogum_tar"));
+        infoBox.Propetys.put("p_dogum_tar", getTextInfoTable().getString("p_dogum_tar"));
         infoBox.Propetys.put("p_dogum_yer", getTextInfoTable().getString("p_dogum_yer"));
         infoBox.Propetys.put("p_ad", getTextInfoTable().getString("p_ad"));
-        //infoBox.Propetys.put("p_olum_tar", getTextTable().getString("p_olum_tar"));
-        // infoBox.Propetys.put("p_olum_yer", getTextInfoTable().getString("p_olum_yer"));
+        infoBox.Propetys.put("p_olum_tar", getTextInfoTable().getString("p_olum_tar"));
+       // infoBox.Propetys.put("p_olum_yer", getTextInfoTable().getString("p_olum_yer"));
     }
 
     private static String defineTrainString(String revText) throws Exception {
@@ -95,8 +95,6 @@ public class CRFEvaluator {
                     if (mappingKey!= "p_ad")
                     {
                     template = new Template();
-
-
                     template.text = revText;
                     template.name = getTextInfoTable().getString("p_ad");
                     template.revisionId = getTextInfoTable().getInt("rev_id");
