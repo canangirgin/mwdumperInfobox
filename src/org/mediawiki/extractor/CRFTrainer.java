@@ -83,6 +83,10 @@ public class CRFTrainer {
         infoBox.Propetys.put("p_ad", getTextInfoTable().getString("p_ad"));
         infoBox.Propetys.put("p_olum_tar", getTextInfoTable().getString("p_olum_tar"));
         // infoBox.Propetys.put("p_olum_yer", getTextInfoTable().getString("p_olum_yer"));
+        infoBox.Propetys.remove("p_olum_yer");
+       // infoBox.Propetys.remove("p_dogum_yer");
+        //infoBox.Propetys.remove("p_dogum_tar");
+       // infoBox.Propetys.remove("p_olum_tar");
     }
 
     private static String defineTrainString(String revText) throws SQLException {

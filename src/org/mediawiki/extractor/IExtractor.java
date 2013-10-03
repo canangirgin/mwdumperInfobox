@@ -3,35 +3,42 @@ package org.mediawiki.extractor;
 import java.sql.SQLException;
 import java.util.Map;
 
-public abstract class  IExtractor {
+public abstract class IExtractor {
 
 
-   abstract void Extract(Template template,Map.Entry infobox) throws SQLException;
+    abstract void Extract(Template template, Map.Entry infobox) throws SQLException;
 
-    protected void LabelData(String result,Map.Entry infobox, int index)
-    {
-        if (CheckResult(result,""+infobox.getValue()))
+    protected void LabelData(String result, Map.Entry infobox, int index) {
+        result=CheckResult(result, "" + infobox.getValue());
+        if (result != null)
         {
-            index= CRFTrainer.labeledText.indexOf(result,index);
-    //TODO daha önce işaretlenmiş bir veri var ise bunu dikkate almak gerekir.
-    //O yuzden sadece işaretleyecek en son summary çıkartacak.
-        CRFTrainer.labeledText=CRFTrainer.labeledText.substring(0,index) +"<ENAMEX_TYPE=\""+infobox.getKey()+"\">"+ result.trim() + "</ENAMEX>"+ CRFTrainer.labeledText.substring(CRFTrainer.labeledText.indexOf(" ",index+result.length()));
+            index = CRFTrainer.labeledText.indexOf(result, index);
+            //TODO daha önce işaretlenmiş bir veri var ise bunu dikkate almak gerekir.
+            //O yuzden sadece işaretleyecek en son summary çıkartacak.
+
+            CRFTrainer.labeledText = CRFTrainer.labeledText.substring(0, index).trim() + " <ENAMEX_TYPE=\"" + infobox.getKey() + "\">" + result.trim() + "</ENAMEX>" + CRFTrainer.labeledText.substring(CRFTrainer.labeledText.indexOf(" ", index + result.length()));
+
         }
     }
 
-    private static boolean CheckResult(String result, String values) {
-        if (result!= null && !result.isEmpty() && result.length()<4)
+    private static String CheckResult(String result, String values) {
+        if (result != null && !result.isEmpty())
+
         {
-             if (values.toLowerCase().contains(result.toLowerCase()))
-             {
-                 return true;
-             }
-        }else
-        {
-            if (result != null && !result.isEmpty() && values.toLowerCase().contains(result.toLowerCase().substring(0,4)))
-            { return true;}
+            String[] splits = result.split("\\s");
+            for (String resultSplit : splits) {
+                if (resultSplit.length() < 4) {
+                    if (values.toLowerCase().contains(resultSplit.toLowerCase())) {
+                        return resultSplit;
+                    }
+                } else {
+                    if (resultSplit != null && !resultSplit.isEmpty() && values.toLowerCase().contains(resultSplit.toLowerCase().substring(0, 4))) {
+                        return resultSplit;
+                    }
+                }
+            }
         }
-        return false;
+        return null;
     }
 
 

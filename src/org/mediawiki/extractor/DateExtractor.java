@@ -22,7 +22,7 @@ public class DateExtractor extends IExtractor {
         if (matcher.find())
         {
 
-            int year= Integer.parseInt(matcher.group(0));
+        int year= Integer.parseInt(matcher.group(0));
         int index = CRFTrainer.labeledText.indexOf(""+year);
         if (index<1)
             return ;
