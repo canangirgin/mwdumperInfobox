@@ -16,7 +16,9 @@ public abstract class IExtractor {
             //TODO daha önce işaretlenmiş bir veri var ise bunu dikkate almak gerekir.
             //O yuzden sadece işaretleyecek en son summary çıkartacak.
 
-            CRFTrainer.labeledText = CRFTrainer.labeledText.substring(0, index).trim() + " <ENAMEX_TYPE=\"" + infobox.getKey() + "\">" + result.trim() + "</ENAMEX>" + CRFTrainer.labeledText.substring(CRFTrainer.labeledText.indexOf(" ", index + result.length()));
+           // CRFTrainer.labeledText = CRFTrainer.labeledText.substring(0, index).trim() + " <ENAMEX_TYPE=\"" + infobox.getKey() + "\">" + result.trim() + "</ENAMEX>" + CRFTrainer.labeledText.substring(CRFTrainer.labeledText.indexOf(" ", index + result.length()));
+            CRFTrainer.labeledText = CRFTrainer.labeledText.substring(0, index).trim() + " <ENAMEX_TYPE=\"" + infobox.getKey() + "\">" + CRFTrainer.labeledText.substring(index,CRFTrainer.labeledText.indexOf(" ",index))+ "</ENAMEX> " +CRFTrainer.labeledText.substring(CRFTrainer.labeledText.indexOf(" ", index)).trim();
+
 
         }
     }
