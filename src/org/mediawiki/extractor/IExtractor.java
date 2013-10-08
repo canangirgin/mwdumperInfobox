@@ -17,7 +17,11 @@ public abstract class IExtractor {
             //O yuzden sadece işaretleyecek en son summary çıkartacak.
 
            // CRFTrainer.labeledText = CRFTrainer.labeledText.substring(0, index).trim() + " <ENAMEX_TYPE=\"" + infobox.getKey() + "\">" + result.trim() + "</ENAMEX>" + CRFTrainer.labeledText.substring(CRFTrainer.labeledText.indexOf(" ", index + result.length()));
-            CRFTrainer.labeledText = CRFTrainer.labeledText.substring(0, index).trim() + " <ENAMEX_TYPE=\"" + infobox.getKey() + "\">" + CRFTrainer.labeledText.substring(index,CRFTrainer.labeledText.indexOf("\\s",index))+ "</ENAMEX> " +CRFTrainer.labeledText.substring(CRFTrainer.labeledText.indexOf("\\s", index)).trim();
+           if(infobox.getValue().toString().contains("1897"))
+           {
+               String durbakam="";
+           }
+            CRFTrainer.labeledText = CRFTrainer.labeledText.substring(0, index).trim() + " <ENAMEX_TYPE=\"" + infobox.getKey() + "\">" + CRFTrainer.labeledText.substring(index).split("\\s+")[0].replaceAll("\\s","")+ "</ENAMEX> " +CRFTrainer.labeledText.substring(index).split("\\s+",2)[1].trim();
 
 
         }

@@ -47,7 +47,7 @@ public class CRFEvaluator {
         sqlWriter = openWriter();
         fstream = new FileWriter("testEval.txt");
         out = new BufferedWriter(fstream);
-        WikiRelationTagger.LoadModel("C:\\Users\\hs\\repo\\wiki-extractor\\nouncrfP");
+        WikiRelationTagger.LoadModel("C:\\Users\\hs\\repo\\wiki-extractor\\nouncrfHadiGari");
         while (getTextInfoTable().next()) {
             try {
                 infoBox = new Infobox();

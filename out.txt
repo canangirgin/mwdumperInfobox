@@ -193,10 +193,8 @@ bilgi kutusu
 
 }}
 
-'''Behram Kurşunoğlu''' (d. Bayburt <ENAMEX_TYPE="p_dogum_tar">1922</ENAMEX> - ö. Miami, Florida 25 Ekim <ENAMEX_TYPE="p_olum_tar">2003).
-
-Prof.</ENAMEX> Dr. Behram Kurşunoğlu
-Aslen Bayburt'un Merkez 
+'''Behram Kurşunoğlu''' (d. Bayburt <ENAMEX_TYPE="p_dogum_tar">1922</ENAMEX> - ö. Miami, Florida 25 Ekim <ENAMEX_TYPE="p_olum_tar">2003).</ENAMEX> Prof. Dr. Behram Kurşunoğlu
+Aslen Bayburt'un 
 
 adamı bilgi kutusu
 
@@ -563,8 +561,7 @@ Jorge Loureiro''') (d. 2 Eylül <ENAMEX_TYPE="p_dogum_tar">1977,</ENAMEX> <ENAME
 
 François Vogel''' (d. 8 Mart <ENAMEX_TYPE="p_dogum_tar">1977</ENAMEX> - <ENAMEX_TYPE="p_dogum_yer">Cenevre,</ENAMEX> İsviçre) İsviçreli eski orta saha 
 
-  = 18 Ekim <ENAMEX_TYPE="p_dogum_tar">1945
-|</ENAMEX> uyruk     
+  = 18 Ekim <ENAMEX_TYPE="p_dogum_tar">1945</ENAMEX> | uyruk    
 
 '''Yıldo''' (d. 18 Ekim 1945, <ENAMEX_TYPE="p_dogum_yer">Ereğli,</ENAMEX> Konya), Türk şovmen, dizi oyuncusu, 
 
@@ -895,9 +892,7 @@ Kadrosu
 
 Mendoza Azevedo'' (d. 26 Nisan <ENAMEX_TYPE="p_dogum_tar">1978;</ENAMEX> <ENAMEX_TYPE="p_dogum_yer">Chincha</ENAMEX> Alta), Columbus Crew'da oynayan Perulu 
 
-= {{doğum tarihi ve yaşı| <ENAMEX_TYPE="p_dogum_tar">1975|3|21}}
-|</ENAMEX> Nationality  = {{bayraksimge|Wales}} Galler|Gal
-| 
+= {{doğum tarihi ve yaşı| <ENAMEX_TYPE="p_dogum_tar">1975|3|21}}</ENAMEX> | Nationality  = {{bayraksimge|Wales}} 
 
 İrene'nin en büyük oğulları. Şubat <ENAMEX_TYPE="p_dogum_tar">1106</ENAMEX> tarihinde Balabista, Makedonya'da doğmuştur. 16 
 
@@ -946,9 +941,8 @@ Kalenga ''' (d. 12 Aralık <ENAMEX_TYPE="p_dogum_tar">1967</ENAMEX> <ENAMEX_TYPE
 
 Kalenga ''' (d. 29 Eylül <ENAMEX_TYPE="p_dogum_tar">1978</ENAMEX> <ENAMEX_TYPE="p_dogum_yer">Kamina),</ENAMEX> Demokratik Kongo Cumhuriyeti|Kongolu eski millî 
 
-{{düzenle|Haziran <ENAMEX_TYPE="p_olum_tar">2012}}
-{{kaynaksız}}
-{{Diğer</ENAMEX> anlamı|Bekir Karayel}}
+{{düzenle|Haziran <ENAMEX_TYPE="p_olum_tar">2012}}</ENAMEX> {{kaynaksız}}
+{{Diğer anlamı|Bekir Karayel}}
 {{Kişi bilgi kutusu
 
 }}
@@ -1150,9 +1144,7 @@ bilgi kutusu
 
 }}
 
-'''Fransız hekimi ve iktisatçısı.(1694- <ENAMEX_TYPE="p_olum_tar">1774)'''
-
-Orta</ENAMEX> halli bir ailenin çocuğu olan 
+'''Fransız hekimi ve iktisatçısı.(1694- <ENAMEX_TYPE="p_olum_tar">1774)'''</ENAMEX> Orta halli bir ailenin çocuğu 
 
 kutusu
 
@@ -3270,11 +3262,9 @@ Hazar (Farsça: کامران میرهزار) (doğum <ENAMEX_TYPE="p_dogum_tar">
  (İngilizce) (Erişim : 30.8.2009)
 
 {{s-start}}
-{{s-hou|Abbasi|| <ENAMEX_TYPE="p_dogum_tar">1192||1242}}
-{{s-rel|su}}
-{{s-bef|before=Zahir</ENAMEX> (Abbasi)|Zahir}}
-{{s-ttl|title=Halifeler listesi|İslam Halifesi|years=1226 - 1242}}
-{{s-aft|after=Mustasım 
+{{s-hou|Abbasi|| <ENAMEX_TYPE="p_dogum_tar">1192||1242}}</ENAMEX> {{s-rel|su}}
+{{s-bef|before=Zahir (Abbasi)|Zahir}}
+{{s-ttl|title=Halifeler listesi|İslam Halifesi|years=1226 - 
 
 bilgi kutusu
 
@@ -3781,11 +3771,12 @@ ISBN 0-00-217350-6 p 23-24</ref>
 
 William Banks, <ENAMEX_TYPE="p_dogum_yer">Londra'da</ENAMEX> doğdu, ailesi Lincolnshire'da Avam Kamarası 
 
-{{düzenle|Haziran <ENAMEX_TYPE="p_olum_tar">2009}}
-{{Kişi</ENAMEX> bilgi kutusu
+{{düzenle|Haziran <ENAMEX_TYPE="p_olum_tar">2009}}</ENAMEX> {{Kişi bilgi kutusu
 
 }}
-'''Nida Ağa-Sultan ''' (Farsça: '''ندا آقاسلطان''' Nedā Āġā-Solṭān; d. <ENAMEX_TYPE="p_dogum_tar">1982</ENAMEX> - ö.  20 Haziran 
+'''Nida Ağa-Sultan ''' 
+
+'''ندا آقاسلطان''' Nedā Āġā-Solṭān; d. <ENAMEX_TYPE="p_dogum_tar">1982</ENAMEX> - ö.  20 Haziran 
 
 J. Malmsteen''' (d. 30 Haziran <ENAMEX_TYPE="p_dogum_tar">1963,</ENAMEX> <ENAMEX_TYPE="p_dogum_yer">Stokholm,</ENAMEX> İsveç), müzisyen, gitar virtüözu. 
 
@@ -4229,9 +4220,7 @@ Berlin Üniversitesi'nde Hermann
 
 öneme sahiptir.
 
-<big>'''Giovanni Bellini Biyografi - <ENAMEX_TYPE="p_dogum_tar">1430</ENAMEX> - <ENAMEX_TYPE="p_olum_tar">1516'''</big>
-
-1430</ENAMEX> doğumlu Giovanni Bellini sanatçı bir 
+<big>'''Giovanni Bellini Biyografi - <ENAMEX_TYPE="p_dogum_tar">1430</ENAMEX> - <ENAMEX_TYPE="p_olum_tar">1516'''</big></ENAMEX> 1430 doğumlu Giovanni Bellini sanatçı 
 
 kutusu
 
@@ -4365,11 +4354,9 @@ sanatçısı bilgi kutusu
 
 '''Mariam Kakhelishvili''' (d. <ENAMEX_TYPE="p_dogum_tar">1995)</ENAMEX> - Gürcü sanatçı ve söz 
 
-= {{Doğum tarihi ve yaşı| <ENAMEX_TYPE="p_dogum_tar">1955|10|28}}
-|</ENAMEX> doğum_yeri     
+= {{Doğum tarihi ve yaşı| <ENAMEX_TYPE="p_dogum_tar">1955|10|28}}</ENAMEX> | doğum_yeri    
 
-= {{Ölüm tarihi ve yaşı| <ENAMEX_TYPE="p_olum_tar">1890|8|22|1821|7|21}}
-|</ENAMEX> ölüm_yeri     
+= {{Ölüm tarihi ve yaşı| <ENAMEX_TYPE="p_olum_tar">1890|8|22|1821|7|21}}</ENAMEX> | ölüm_yeri    
 
 Mavrokordatos''' ({{dil-el|'''Αλέξανδρος Μαυροκορδάτος'''}}) (d.11 Şubat <ENAMEX_TYPE="p_dogum_tar">1791,</ENAMEX> <ENAMEX_TYPE="p_dogum_yer">İstanbul,</ENAMEX> Osmanlı İmparatorluğu (şimdi Türkiye)) – (ö. 18 Ağustos <ENAMEX_TYPE="p_olum_tar">1865,</ENAMEX> Aegina) Yunan siyaset adamı.
 
@@ -5967,8 +5954,7 @@ bilgi kutusu
 
 '''Kutsi''', (d. 16 Mart <ENAMEX_TYPE="p_dogum_tar">1973,</ENAMEX> <ENAMEX_TYPE="p_dogum_yer">Malatya)</ENAMEX> gerçek adı '''Ahmet Kutsi Karadoğan''' 
 
-= {{doğum tarihi ve yaşı| <ENAMEX_TYPE="p_dogum_tar">1972|3|6}}
-|</ENAMEX> doğumyeri     
+= {{doğum tarihi ve yaşı| <ENAMEX_TYPE="p_dogum_tar">1972|3|6}}</ENAMEX> | doğumyeri    
 
 O'Neal''' (d. 6 Mart 1972, <ENAMEX_TYPE="p_dogum_yer">Newark),</ENAMEX> Amerikalı profesyonel NBA oyuncusudur.  
 
@@ -6383,8 +6369,7 @@ kutusu
 
 veya '''Santana''', (d. 20 Temmuz <ENAMEX_TYPE="p_dogum_tar">1947)</ENAMEX> ünlü bir Meksikalı gitarist ve 
 
-{{düzenle|Ocak <ENAMEX_TYPE="p_olum_tar">2012}}
-{{Oyuncu</ENAMEX> bilgi kutusu
+{{düzenle|Ocak <ENAMEX_TYPE="p_olum_tar">2012}}</ENAMEX> {{Oyuncu bilgi kutusu
 
 }} <ENAMEX_TYPE="p_dogum_yer">Adana</ENAMEX> doğumludur. Almanya'da lise eğitimini tamamlamış 
 
@@ -6428,9 +6413,7 @@ anlamı|Sabancı}}
 {{Kişi bilgi kutusu
 
 }}
-'''Murat Sabancı''' (d. <ENAMEX_TYPE="p_dogum_tar">1967,</ENAMEX> <ENAMEX_TYPE="p_dogum_yer">Adana)
-
-Nevin</ENAMEX> Tenik ve İhsan Sabancı çiftinin 
+'''Murat Sabancı''' (d. <ENAMEX_TYPE="p_dogum_tar">1967,</ENAMEX> <ENAMEX_TYPE="p_dogum_yer">Adana)</ENAMEX> Nevin Tenik ve İhsan Sabancı 
 
 anlamı|Sabancı}}
 {{Kişi bilgi kutusu
@@ -8590,9 +8573,7 @@ Eylül 2012}}</ref>
 
 Polonya Wadowice'de 18 Mayıs <ENAMEX_TYPE="p_dogum_tar">1920'de</ENAMEX> dünyaya geldi. 1938'de Lehçe|Leh Dili 
 
-e Identita' (Bellek ve Kimlik, <ENAMEX_TYPE="p_olum_tar">2005)
-
-2</ENAMEX> Nisan 2005 tarihinde vefat eden 
+e Identita' (Bellek ve Kimlik, <ENAMEX_TYPE="p_olum_tar">2005)</ENAMEX> 2 Nisan 2005 tarihinde vefat 
 
 Şamil Ebu-İdris'', d. 14 Ocak <ENAMEX_TYPE="p_dogum_tar">1965</ENAMEX> – ö. 10 Temmuz <ENAMEX_TYPE="p_olum_tar">2006),</ENAMEX> Çeçen gerilla lideri. 1965'de Çeçenistan'ın Vedeno bölgesi'nin <ENAMEX_TYPE="p_dogum_yer">Vedeno</ENAMEX> köyünde doğdu. 1987 yılında Moskova'da 
 
